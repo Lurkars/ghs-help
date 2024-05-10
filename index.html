@@ -31,14 +31,14 @@
       on gameplay. The app supports all official editions namely <strong>Gloomhaven</strong>,
       <strong>Frosthaven</strong>, <strong>Jaws of the Lion</strong> and <strong>Forgotten Circles</strong>, the
       community editions <strong>The Crimson Scales</strong> and <strong>Trail of Ashes</strong> as well as
-      <strong>Solo</strong> scenarios and custom content. GHS is heavily based on the look&feel of the original
+      <strong>Solo</strong> scenarios and custom content. GHS is heavily based on the look and feel of the original
       Gloomhaven Helper (by Esoteric Software®).
       Since
-      GHH is discontinued and not available anymore, GHS should become a well maintained successor, implementing all
+      GHH is discontinued and not available anymore, GHS should become a well-maintained successor, implementing all
       features of GHH, improvements and even more features. As GHS is a web application no installation is required
       and
       it
-      runs in every modern browser even on mobile, still it can also be <a target="_blank"
+      runs in every modern browser even on mobile. It can also be <a target="_blank"
         href="https://github.com/Lurkars/gloomhavensecretariat#install">installed</a>. For usage with multiple clients
       sharing the same game, the server component <a target="_blank"
         href="https://github.com/Lurkars/ghs-server">Gloomhaven Secretariat Server</a> is required.
@@ -51,24 +51,24 @@
     <h2 id="faq">F.A.Q.</h2>
 
     <details>
-      <summary>A player is missing for a session, how to keep it's character in the party without participating in
+      <summary>A player is missing for a session, how do we keep the character in the party without participating in the
         scenario?</summary>
 
-      There is a <strong>Absent</strong> feature implemented. After started the scenario, mark a character as
+      There is an <strong>Absent</strong> feature. After you start the scenario, mark a character as
       <strong>absent</strong> by opening the
       <a href="#updating-character">character menu</a> or
-      <a href="#character-sheet">character sheet</a> and just click on the character name. The name should be <span
-        class="strike">striked-through</span> to indicate its absent. To hide absent characters in the list, use the
+      <a href="#character-sheet">character sheet</a> and just clicking on the character name. The name should be <span
+        class="strike">struck-through</span> to indicate it's absent. To hide absent characters in the list, use the
       setting <strong>Hide absent figures</strong>.<br>
-      Absent characters do not gain scenario rewards after finishing a scenario. If XP should be gained anyway for
+      Absent characters do not gain scenario rewards after finishing a scenario. If XP should be gained anyway, for
       example, just toggle the absent state in the scenario summary.
     </details>
 
     <details>
-      <summary>How to add a section to the calender on Frosthaven's campaign sheet?</summary>
+      <summary>How do we add a section to the calender on Frosthaven's campaign sheet?</summary>
 
-      Just double click (or long press on mobile) on the corresponding week to open a menu to add or edit the sections
-      for a week.
+      Just double-click (long-press on mobile) on the corresponding week to open a menu to add or edit sections
+      for that week.
     </details>
 
     <details>
@@ -76,16 +76,16 @@
 
       GHS uses the browser's local <a target="_blank"
         href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a> to store the current game
-      state, settings and undo/redo information. As the name implies this is local every browser so no data is stored
-      on other deviced. Keep in mind that in private/incognito mode the browser will clear the IndexedDB after close!
-      If your browser does not support IndexedDB, the <a target="_blank"
+      state, settings and undo/redo information. As the name implies, this info is local to every browser so no data is stored
+      on other devices. Keep in mind that in private/incognito mode the browser will clear the IndexedDB after the window closes!
+      If your browser does not support IndexedDB, <a target="_blank"
         href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">localStorage</a> will be used as
-      fallback with a limit of max. 50 undos.<br>There are multiple options available to store the state otherwise:
+      fallback with a limit of 50 undos.<br>There are other options available to store the state:
       <ol>
-        <li>Export Game as file under <i>Data Management</i> menu (and import it there later)</li>
-        <li>automatic export as file or to post to URL under <i>Data Management</i>
-        <li>Use a <a href="#server">Server connection</a> to store game on a server and access it from any client
-          afterwards</li>
+        <li>Manually <strong>Export Game to File</strong> under the <i>Data Management</i> menu (and <strong>Import Game from File</strong> there later)</li>
+        <li>Turn on <strong>Automatic Backups</strong> under <i>Data Management</i>, configured to download a file or (if a URL is supplied) upload to a URL 
+        <li>Use <a href="#server"><strong>Server Connection</strong></a> to store the game on a server and access it from any client, including realtime synchronizing of changes,
+          from then on</li>
       </ol>
     </details>
     <details>
@@ -99,14 +99,14 @@
     <h2 id="basic">Basic Usage</h2>
 
     <p>On first start a new game is created and you can choose your edition to start a new campaign. The current game
-      is saved in the browser, so no game state is lost
-      when closing the page and coming back later (please note: private/inkognito browsing modes of course deletes
+      is saved in the browser, so no game data is lost
+      when you browse elsewhere and come back later (please note: private/incognito browsing modes will of course delete
       this
       data on closing!).</p>
 
     <p>Most setup is done via the <strong>Main Menu <img class="icon"
-          src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> on the top left
-      corner. A shortcut for current action is located next to the menu icon.</p>
+          src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> in the top left
+      corner.</p>
 
     <h3 id="adding-character">Adding Characters</h3>
 
@@ -120,16 +120,16 @@
           src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> and click the <strong>Set
         Scenario</strong> button. Select the edition to get a list of all available scenarios for the selected
       edition.
-      Click on the scenario number to setup the scenario.</p>
+      Click on the scenario number to set up the scenario.</p>
 
-    <p>To play a custom scenario, select <strong>Custom</strong> option and optional enter a name for the scenario.
+    <p>To play a custom scenario, select the <strong>Custom</strong> option and optionally enter a name for the scenario.
       Afterwards in the <strong>Main Menu <img class="icon"
           src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> click on the <strong>Add
-        Monster</strong> button to add Monster.</p>
+        Monster</strong> button to add a monster.</p>
 
-    <h3 id="scenario-level">Scenario level</h3>
+    <h3 id="scenario-level">Scenario Level</h3>
 
-    <p>On bottom in the middle the current scenario level with it's corresponding values for <strong>gold conversion
+    <p>At the bottom in the middle, the current scenario level with it's corresponding values for <strong>gold conversion
         <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/loot.svg"></strong>,
       <strong>trap damage <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/trap.svg"></strong> ,
       <strong>experience <img class="icon"
@@ -138,17 +138,17 @@
         terrain <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/terrain.svg"></strong>
       are
       shown. The scenario
-      level is automatically set based on the added character level.
+      level is automatically set based on the level of the added characters.
     </p>
 
-    <p>To adjust difficulty set <strong>Scenario level adjustment</strong> in level menu.</p>
+    <p>To adjust the difficulty, click or touch the values, then use <strong>Scenario level adjustment</strong>.</p>
 
-    <p>To change the level manually just click on the values and first disable <strong>Automatic level
-        calculation</strong>, afterwards select the corresponding level. The recommended level based on the
-      character's
+    <p>To change the level manually, first disable <strong>Automatic level
+        calculation</strong>, then select the corresponding level. The recommended level based on the
+      characters'
       level is highlighted with a lighter
-      circle if not matching the current level. (To change character levels, see <a href="#updating-character">Updating
-        character</a> or additional <a href="#managing-character">Managing character</a>.)</p>
+      circle if it does not match the current level. (To change character levels, see <a href="#updating-character">Updating
+        Character</a> and <a href="#managing-character">Managing Character</a>.)</p>
 
     <p>With <strong>Level bonuses adjustment</strong> set adjustment of the level used for bonuses calculation and
       <strong>&ge; 5 player rule</strong> (Only visible by &ge; 5 characters) apply Isaac's 5 player rules (Level+2,
@@ -159,76 +159,74 @@
 
     <h3 id="spawn-monster">Spawn Monster</h3>
 
-    <p>To spawn monster, click on the <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/plus.svg">
+    <p>To spawn a monster, click on the <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/plus.svg">
       on
-      the monster stat cards. For normal
+      the monster stat cards. For a normal
       monster, click on the left <img class="icon filter-gray"
-        src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon, for elite on the right <img
+        src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon. For an elite monster, click on the right <img
         class="icon filter-yellow" src="https://gloomhaven-secretariat.de/assets/images/plus.svg">
-      icon and for bosses on the left <img class="icon filter-red"
+      icon. For bosses, click on the left <img class="icon filter-red"
         src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon.</p>
 
-    <h4 id="monster-level">Manually change Monster Level</h4>
+    <h4 id="monster-level">Manually Change Monster Level</h4>
 
-    <p>To change the level of a Monster manually, just click on the current Level number on the monsters stat sheet to
+    <p>To change the level of a monster manually, click on the current Level number on the monster's stat sheet to
       open a level menu.</p>
 
     <h3 id="choose-initiative">Choose Initiative</h3>
 
-    <p>Before starting the round, each character must have it's initiative set. The initiative can be set by clicking
+    <p>Before starting the round, each character must have its initiative set. The initiative can be set by clicking
       on
       the <strong>character portrait</strong>, the
       <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/initiative.svg"> icon
       next to it or by entering it directly in the <strong>input
         field</strong> under the <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/initiative.svg">
-      icon. Additionally drag the
-      character portrait to change initiative.
+      icon. You can also drag the
+      character portrait left or right to adjust the initiative.
     </p>
 
     <h3 id="start-round">Start Round</h3>
 
-    <p>After choosing initiative the round can be started by clicking the <strong>Draw</strong> button on the bottom
+    <p>After choosing initiative the round can be started by clicking the <strong>Draw</strong> button in the bottom
       left
-      side. On start the monster ability cards are drawn and all figures are sorted by it's initiative. Now it's the
-      turn
-      of the first figure. The active figure is marked with a <span class="active-border">highlight</span> around
-      it's portrait.</p>
+      corner. The monster ability cards will be drawn and all figures will be sorted by their initiative. Now it's the
+      first figure's turn. The active figure is marked with a <span class="active-border">highlight</span> around
+      its portrait.</p>
 
     <h3 id="entity-menus">Entity Menus</h3>
 
-    <p>On most turns values like hit points and conditions are updated. To do so, every entity has a
+    <p>On most turns values like hit points and conditions must be updated. Every entity has a
       <strong>menu</strong>
-      for changing it's values.
+      for changing its values.
     </p>
 
-    <h4 id="updating-monster-entity">Updating monster entity</h4>
+    <h4 id="updating-monster-entity">Updating Monster Entity</h4>
 
-    <p>Every monster entity is represented by it's <strong>standee</strong> below the monster's ability card. Just
-      click
+    <p>Every monster entity is represented by its <strong>standee</strong> below the monster's ability card. Click
       on the <strong>standee</strong> to open the menu for the monster entity.</p>
 
-    <p>Change the hit points with the by clicking the <img class="icon"
+    <p>Change the hit points by clicking the <img class="icon"
         src="https://gloomhaven-secretariat.de/assets/images/minus.svg"> icon or <img class="icon"
         src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon next to the <strong>big</strong>
       <img class="icon filter-off" src="https://gloomhaven-secretariat.de/assets/images/status/health.svg">
-      icon on the top left of the menu.
+      icon at the top left of the menu.
     </p>
 
-    <p>Apply conditions by just clicking on the corresponding <strong>condition icon</strong>.</p>
+    <p>Apply or remove conditions by clicking on the corresponding <strong>condition icon</strong>.</p>
 
-    <p><strong>Curses</strong> and <strong>Blesses</strong> are automatically shuffled into or removed from the
-      <strong>Monster Attack Modifier Deck</strong> by clicking the <img class="icon"
+    <p><strong>Curses</strong> and <strong>Blesses</strong> are automatically shuffled into or removed from the shared 
+      <strong>Monster Attack Modifier Deck</strong> when you click the <img class="icon"
         src="https://gloomhaven-secretariat.de/assets/images/minus.svg"> icon or
       <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon next
       to the <img class="icon filter-off" src="https://gloomhaven-secretariat.de/assets/images/status/curse.svg"> or
-      <img class="icon filter-off" src="https://gloomhaven-secretariat.de/assets/images/status/bless.svg"> icon.
+      <img class="icon filter-off" src="https://gloomhaven-secretariat.de/assets/images/status/bless.svg"> icons.
     </p>
 
-    <p>An entity is automatically dead when it hit points are below 1. To directly kill a monster entity click on the
+    <p>An entity is automatically dead when it hit points are below 1. To kill a monster entity directly, click on the
       <img class="icon filter-off" src="https://gloomhaven-secretariat.de/assets/images/status/dead.svg"> icon.
     </p>
 
-    <p>Additionally the maximum hit points can changed by clicking the <img class="icon"
+    <p>The maximum hit points can be changed by clicking the <img class="icon"
         src="https://gloomhaven-secretariat.de/assets/images/minus.svg"> icon or
       <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon next
       to the <strong>small</strong> <img class="icon filter-off"
@@ -238,40 +236,40 @@
       summoned.
     </p>
 
-    <h5 id="monster-entity-active">Entity active state</h5>
+    <h5 id="monster-entity-active">Entity Active State</h5>
 
-    <p>On every monster turn, all entities are marked as active, visible by a <span
-        class="active-entity-border">highlight</span>. Double click on the standee to mark the end turn of the entity.
+    <p>On each monster's turn, all entities of that type are marked as active, visible by a <span
+        class="active-entity-border">highlight</span>. Double click on the entity to mark the end of the entity's turn.
     </p>
 
-    <h4 id="updating-character">Updating character</h4>
+    <h4 id="updating-character">Updating Character</h4>
 
-    <p>To open the menu for a character click on the middle area of the character.</p>
+    <p>To open the menu for a character click on the middle of the character area.</p>
 
-    <p>Change the hit points with the by clicking the <img class="icon"
+    <p>Change the hit points by clicking the <img class="icon"
         src="https://gloomhaven-secretariat.de/assets/images/minus.svg"> icon or <img class="icon"
         src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon next to the <strong>big</strong>
       <img class="icon filter-off" src="https://gloomhaven-secretariat.de/assets/images/status/health.svg">
-      icon on the top left of the menu.
+      icon at the top left of the menu.
     </p>
 
-    <p>Apply conditions by just clicking on the corresponding <strong>condition icon</strong>.</p>
+    <p>Apply or remove conditions by clicking on the corresponding <strong>condition icon</strong>.</p>
 
-    <p><strong>experience</strong> and <strong>Loot</strong> gained during the scenario can be set by clicking the
+    <p><strong>Experience</strong> and <strong>Loot</strong> gained during the scenario can be recorded by clicking the
       <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/minus.svg"> icon or
       <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon next
       to the <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/experience.svg"> and
-      <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/loot.svg"> icon.
+      <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/loot.svg"> icons.
     </p>
 
-    <p>A character is automatically exhausted when it hit points are below 1. To directly mark a character as
-      exhausted
+    <p>A character is automatically exhausted when its hit points are below 1. To manually mark a character as
+      exhausted,
       click on the <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/status/exhausted.svg">
       icon.</p>
 
     <p>Additionally the level can changed by clicking the <img class="icon"
         src="https://gloomhaven-secretariat.de/assets/images/level.svg"> icon. Change the
-      level by selecting the corresponding number. The new maximum hit points are calculated automatically. The
+      level by selecting the corresponding number. The new maximum hit points will be calculated automatically. The
       maximum
       hit points can also be changed manually by clicking the <img class="icon"
         src="https://gloomhaven-secretariat.de/assets/images/minus.svg"> icon or <img class="icon"
@@ -286,20 +284,20 @@
         src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon on the
       right side of the character. The summon indicator can be set by selecting a color and a number. Available
       summons
-      are listed be below and are added by clicking on the summon indicator icon on the left to the name. Additionally
-      custom summons can be added by entering a name in the text input field and clicking the summon indicator next to
+      are listed be below and are added by clicking on the summon indicator icon on the left of the name. 
+      Custom summons can be added by entering a name in the text input field and clicking the summon indicator next to
       it.
     </p>
 
-    <h3 id="end-begin-turn">End/Begin figure's turn</h3>
+    <h3 id="end-begin-turn">End/Begin Figure's Turn</h3>
 
-    <p>To end a figures turn click on the figure portrait. The next figure is automatically activated. Alternatively
+    <p>To end a figure's turn click on the figure portrait. The next figure will be activated automatically. Alternatively
       an
-      inactive figure's turn can be started by directly clicking on it's portrait.</p>
+      inactive figure's turn can be started by clicking on its portrait.</p>
 
-    <h3 id="draw-attack-modifier">Draw attack modifier</h3>
+    <h3 id="draw-attack-modifier">Draw Attack Modifier</h3>
 
-    <p>The monster's attack modifier deck in on the bottom right on the screen. Click on the undrawn card to draw the
+    <p>The monster's attack modifier deck is in the bottom right on the screen. Click on the undrawn card to draw the
       next
       card. The last two drawn cards are next to each other. To view or edit the deck, click on one of the drawn
       cards or on the <img class="icon filter-gray" src="https://gloomhaven-secretariat.de/assets/images/settings.svg">
@@ -308,15 +306,15 @@
 
     <p>The character's attack modifier deck can be opened by clicking on the small attack modifier <img
         class="icon filter-off" src="https://gloomhaven-secretariat.de/assets/images/attackmodifier/icon.png"> icon in
-      the middle of the character. The deck openes and handles same as the monster's one. Additional all drawn rolling
+      the middle of the character area. The deck opens and works the same as the monster's deck. In addition, all drawn rolling
       modifiers will be shown next to each other.<br>To close the deck just click somewhere on the character.<br>To
       edit
-      character perks, see <a href="#character-sheet">Character Sheet</a>.</p>
+      character perks, see the <a href="#character-sheet">Character Sheet</a>.</p>
 
 
     <h3 id="draw-loot">Draw Loot</h3>
 
-    <p>Frosthaven introduced a new <strong>Loot Deck</strong>. It is automatically configured for Frosthaven scenarios
+    <p>Frosthaven introduced a new <strong>Loot Deck</strong> mechanic. The loot deck is automatically configured for Frosthaven scenarios
       and can be expanded by clicking on the <img class="icon"
         src="https://gloomhaven-secretariat.de/assets/images/fh/loot-token.png"> icon on the bottom left.
       Click on the undrawn card to draw the next card. The last two drawn cards are next to each other. To view or
@@ -330,8 +328,8 @@
 
     <h3 id="end-round">End round</h3>
 
-    <p>When all figures made their turns just click the <strong>Next Round</strong> button on the bottom left to start
-      preparing the next round.</p>
+    <p>When all figures have taken their turns click the <strong>Next Round</strong> button on the bottom left to start
+      preparing for the next round.</p>
 
     <h3 id="finish-scenario">Finish Scenario</h3>
 
@@ -339,78 +337,76 @@
         class="color-green">Success</strong> or <strong class="color-red">Failure</strong> to end the scenario with
       success or failure.</p>
 
-    <p>When a scenario is finished either with success or failure the corresponding bonuses, namely gained XP and
+    <p>When a scenario is finished either with success or failure the corresponding bonuses, in XP and
       gold,
       will be shown and also
-      automatically added to the character progress. To view the character progress just open the <a
+      automatically added to the character's progress. To view the character's progress open the <a
         href="#character-sheet">Character Sheet</a>.</p>
 
     <h3 id="add-section">Add Section</h3>
 
-    <p>To open a section, just select the corresponding section on the bottom under the scenario title. Additionaly
+    <p>To open a section, select the corresponding section on the bottom under the scenario title. Alternatively,
       open the <strong>Main Menu <img class="icon"
           src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> and click the <strong>Add
-        Section</strong> button. Select the section same like in <a href="#set-scenario">Set Scenario</a>.</p>
+        Section</strong> button. Select the section same just as you do for <a href="#set-scenario">Set Scenario</a>.</p>
 
 
     <h3 id="character-sheet">Character Sheet</h3>
 
-    <p>To open the character sheet, click on the character icon on the right of the character. A digital version of
+    <p>To open a character's sheet, click on the character icon on the right of the character's area. A digital version of
       the
-      character sheet will show up. Change name, level, xp or gold of character. Item can be brought with automatic
-      spending gold or directly added ignoring it's cost. Battle Goal checkmarks can be set to gain corresponding
+      character sheet will appear. Change the name, level, XP or gold for the character. Items can be added with automatic
+      deducation of the cost in gold, or directly, ignoring the cost. Battle Goal checkmarks can be set to gain corresponding
       extra
-      perks. On the bottom are some extra fields for additional notes, marking the Personal Quest and set number of
-      foregone retirements for gaining the extra perks.</p>
+      perks. On the bottom are some extra fields for making additional notes, recording details of the Personal Quest, and setting the number of
+      previous retirements by that player to enable extra perks.</p>
 
     <h4 id="character-perks">Set Perks</h4>
 
     <p>Changing perks during a scenario is prohibited because changing perks will change and shuffle the character's
       Attack Modifier Deck. The number of available perks is calculated due to level, battle goals and retirements. To
-      change perks without limitations, double click (long press on mobile) on a disabled checkmark to toggle the perk
-      anyway. A warning will
-      be shown if number of checked perks exceed the permitted count.</p>
+      change perks anyway, double-click (long-press on mobile) on a disabled checkbox to toggle the perk. A warning will
+      be shown if the number of checked perks exceeds the permitted number.</p>
 
     <h3 id="party-sheet">Party Sheet</h3>
 
-    <p>On the top bar, click on the <strong>Party Sheet</strong> to open a digital represenation of the party
-      sheet. If a Party Name is set it will shown instead.</p>
+    <p>On the top bar, click on <strong>Party Sheet</strong> to open a digital representation of the party
+      sheet. If a Party Name is set the name will shown instead.</p>
 
     <p>For Frosthaven the Party Sheet is replaced by the <strong>Frosthaven Campaign Sheet</strong>. The basic <a
-        href="#campaign-sheet">Campaign Sheet</a> for managing campaing progress such as scenarios, unlocked items and
-      listing retirements is still available by clicking on <strong>Camapgin Sheet</strong> on the top.</p>
+        href="#campaign-sheet">Campaign Sheet</a> for managing campaign progress such as scenarios, unlocked items and
+      listing retirements is still available by clicking on <strong>Campaign Sheet</strong> at the top.</p>
 
     <h4 id="buildings">Buildings</h4>
 
     <p>Buildings are also managed on the <strong>Frosthaven Campaign Sheet</strong>. Click on the name of the building
-      to change it's status to <strong><img class="icon"
+      to change its status to <strong><img class="icon"
           src="https://gloomhaven-secretariat.de/assets/images/fh/buildings/damaged.svg"> Damaged</strong> or
       <strong><img class="icon" src="https://gloomhaven-secretariat.de/assets/images/fh/buildings/wrecked.svg">
         Wrecked</strong>.
     </p>
 
-    <p>To force
+    <p>To force the
       <strong><img class="icon" src="https://gloomhaven-secretariat.de/assets/images/fh/buildings/upgrade.svg">
         Upgrade</strong>, <strong><img class="icon"
           src="https://gloomhaven-secretariat.de/assets/images/fh/buildings/damaged.svg"> Repair</strong> or
       <strong><img class="icon" src="https://gloomhaven-secretariat.de/assets/images/fh/buildings/wrecked.svg">
-        Rebuild</strong> of a building without spending resources, double click (long
-      press on mobile) on the corresponding icon.
+        Rebuild</strong> of a building without spending resources, double-click (long-press on mobile) the corresponding icon.
     </p>
 
     <h4 id="town-guard-deck">Town Guard Deck</h4>
 
     <p>The <strong>Town Guard Deck</strong> is also available at the <strong>Frosthaven Campaign Sheet</strong>. In
       contrast to the <strong>Attack Modifier Decks</strong>, the <strong>Town Guard Deck</strong> is disabled when
-      playing a scenario and can be drawn during Outpost Phase, otherwise it behaves equally.</p>
+      playing a scenario and can be drawn during Outpost Phase, otherwise it behaves the same way.</p>
 
 
     <h3 id="campaign-sheet">Campaign Sheet</h3>
 
-    <p>On the <strong>Campaign Sheet</strong> <strong>Prosperity</strong>,
+    <p>On the <strong>Campaign Sheet</strong>, you can track <strong>Prosperity</strong>,
       <strong>Global
         Achievements</strong>, <strong>Unlocked Items</strong>, <strong>looted Treasures</strong> and
-      <strong>Donations</strong> can be tracked. To add a treasure or item, just enter the
+      <strong>Donations</strong>. To add a treasure or item, enter the
       treasure or item index number and click on the <img class="icon"
         src="https://gloomhaven-secretariat.de/assets/images/plus.svg">
       icon.
@@ -433,42 +429,41 @@
 
     <p>To open the <strong>Settings Menu</strong> open the <strong>Main Menu <img class="icon"
           src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> and click the
-      <strong>Settings</strong> button. Hover (tap on mobile) over the little <img class="icon filter-gray"
-        src="https://gloomhaven-secretariat.de/assets/images/hint.svg"> icon to get a more detailed description of the
+      <strong>Settings</strong> button. Hover over (tap on mobile) the little <img class="icon filter-gray"
+        src="https://gloomhaven-secretariat.de/assets/images/hint.svg"> icon to get a more detailed description of a
       setting.
     </p>
 
     <h3 id="server">Server Connection</h3>
 
-    <p>To synchronize a game state between multiple clients a separate server component is required to run a server. A
+    <p>To synchronize the game state between multiple clients a separate server component is required. A
       public instance is
-      available under <code>gloomhaven-secretariat.de</code> port <code>8443</code> with <code>secure</code> option.
+      available at <code>gloomhaven-secretariat.de</code> port <code>8443</code> with the <code>secure</code> option.
       To
       run
-      your own server, please refer to <a target="_blank" href="https://github.com/Lurkars/ghs-server#how-to-run">GHS
-        Server#How to
-        run</a>.</p>
+      your own server, please refer to the <a target="_blank" href="https://github.com/Lurkars/ghs-server#how-to-run">How to
+        run</a> section in the GHS Server README.</p>
 
-    <p>To connect to a running server, open the <strong>Main Menu <img class="icon"
+    <p>To connect to a server, open the <strong>Main Menu <img class="icon"
           src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> and
-      click on the <strong>Connect to Server</strong> button. Choose from a list of public servers or manual
-      setup a server: in the server menu the following fields must be set:
+      click on the <strong>Connect to Server</strong> button. Choose from a list of public servers or manually
+      setup a server. In the server menu the following fields must be set:
     </p>
 
     <ul>
       <li><strong>Host</strong> the Host (Url or IP) of the server [<code>gloomhaven-secretariat.de</code>]</li>
       <li><strong>Port</strong> [<code>8443</code>]</li>
       <li><strong>Secure</strong> for secure websocket connection [<code>true</code>]</li>
-      <li><strong>Game Code</strong> The Game Code is your unique identifier for the game, you can also generate a
+      <li><strong>Game Code</strong> The Game Code is your unique identifier for the game. You can also generate a
         random
         UUID for it.</li>
     </ul>
 
     <h3 id="custom">Custom Data</h3>
 
-    <p>To add custom data or change existing data, make your data available over network. For example via GitHub pages
+    <p>To add custom data or change existing data, first make your data available via network (for example, via GitHub Pages
       on
-      the internet. Afterwards just open the <strong>Main Menu <img class="icon"
+      the internet). Then open the <strong>Main Menu <img class="icon"
           src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> and click the <strong>Data
         Management</strong> button. Under <strong>Edition Data Url</strong> add the URL to the data and click the <img
         class="icon filter-gray" src="https://gloomhaven-secretariat.de/assets/images/plus.svg">
