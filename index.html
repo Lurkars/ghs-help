@@ -2,507 +2,2976 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gloomhaven Secretariat Help</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" href="css/style.css">
 </head>
-</head>
-
-<body>
-
-  <div class="container">
-    <h1 id="help">Gloomhaven Secretariat Help</h1>
-
-    <ul>
-      <li><a href="#general">General Information</a></li>
-      <li><a href="#faq">F.A.Q.</a></li>
-      <li><a href="#basic">Basic Usage</a></li>
-      <li><a href="#additional">Additional Setup</a></li>
-    </ul>
-
-    <h2 id="general">General Information</h2>
-
-    <p><a target="_blank" href="https://gloomhaven-secretariat.de">Gloomhaven Secretariat</a> is a
-      companion
-      app for Gloomhaven based board games
-      and does bookkeeping of all entities values to gain more focus
-      on gameplay. The app supports all official editions namely <strong>Gloomhaven</strong>,
-      <strong>Frosthaven</strong>, <strong>Jaws of the Lion</strong> and <strong>Forgotten Circles</strong>, the
-      community editions <strong>The Crimson Scales</strong> and <strong>Trail of Ashes</strong> as well as
-      <strong>Solo</strong> scenarios and custom content. GHS is heavily based on the look and feel of the original
-      Gloomhaven Helper (by Esoteric Software®).
-      Since
-      GHH is discontinued and not available anymore, GHS should become a well-maintained successor, implementing all
-      features of GHH, improvements and even more features. As GHS is a web application no installation is required
-      and
-      it
-      runs in every modern browser even on mobile. It can also be <a target="_blank"
-        href="https://github.com/Lurkars/gloomhavensecretariat#install">installed</a>. For usage with multiple clients
-      sharing the same game, the server component <a target="_blank"
-        href="https://github.com/Lurkars/ghs-server">Gloomhaven Secretariat Server</a> is required.
-    </p>
-
-    <p><a target="_blank" href="https://github.com/Lurkars/gloomhavensecretariat#current-features">List of Current
-        Features</a>
-    </p>
-
-    <h2 id="faq">F.A.Q.</h2>
-
-    <details>
-      <summary>A player is missing for a session, how do we keep the character in the party without participating in the
-        scenario?</summary>
-
-      There is an <strong>Absent</strong> feature. After you start the scenario, mark a character as
-      <strong>absent</strong> by opening the
-      <a href="#updating-character">character menu</a> or
-      <a href="#character-sheet">character sheet</a> and just clicking on the character name. The name should be <span
-        class="strike">struck-through</span> to indicate it's absent. To hide absent characters in the list, use the
-      setting <strong>Hide absent figures</strong>.<br>
-      Absent characters do not gain scenario rewards after finishing a scenario. If XP should be gained anyway, for
-      example, just toggle the absent state in the scenario summary.
-    </details>
-
-    <details>
-      <summary>How do we add a section to the calender on Frosthaven's campaign sheet?</summary>
-
-      Just double-click (long-press on mobile) on the corresponding week to open a menu to add or edit sections
-      for that week.
-    </details>
-
-    <details>
-      <summary>Where is my progress stored?</summary>
-
-      GHS uses the browser's local <a target="_blank"
-        href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a> to store the current game
-      state, settings and undo/redo information. As the name implies, this info is local to every browser so no data is stored
-      on other devices. Keep in mind that in private/incognito mode the browser will clear the IndexedDB after the window closes!
-      If your browser does not support IndexedDB, <a target="_blank"
-        href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">localStorage</a> will be used as
-      fallback with a limit of 50 undos.<br>There are other options available to store the state:
-      <ol>
-        <li>Manually <strong>Export Game to File</strong> under the <i>Data Management</i> menu (and <strong>Import Game from File</strong> there later)</li>
-        <li>Turn on <strong>Automatic Backups</strong> under <i>Data Management</i>, configured to download a file or (if a URL is supplied) upload to a URL 
-        <li>Use <a href="#server"><strong>Server Connection</strong></a> to store the game on a server and access it from any client, including realtime synchronizing of changes,
-          from then on</li>
-      </ol>
-    </details>
-
-    <details>
-      <summary>How can I add Envelope X (and V)? [SPOILER!]</summary>
-
-      To add Envelope X (or V for ToA), enable it under <i>Data Management</i>, then type the complete secret into the
-      <i>Character Filter</i>
-      (not case-sensitive).
-    </details>
-
-    <details>
-      <summary>How do we add campaign stickers from events to the global map?</summary>
-
-      Since event outcomes are not supported yet, there is a workaround if you want to add those stickers to the map:
-      <ul>
-        <li>Open Global Campaign Sheet</li>
-        <li>Add conclusion with a # matching for the following stickers: <i>blue-well</i>, <i>red-well</i>,<i>ice-spike</i>, <i>portcullis</i> or <i>stage</i>
-      </ul>
-    </details>
-
-
-    <h2 id="basic">Basic Usage</h2>
-
-    <p>On first start a new game is created and you can choose your edition to start a new campaign. The current game
-      is saved in the browser, so no game data is lost
-      when you browse elsewhere and come back later (please note: private/incognito browsing modes will of course delete
-      this
-      data on closing!).</p>
-
-    <p>Most setup is done via the <strong>Main Menu <img class="icon"
-          src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> in the top left
-      corner. Hints for what to do next will appear next to the menu icon.</p>
-
-    <h3 id="adding-character">Adding Characters</h3>
-
-    <p>Open the <strong>Main Menu <img class="icon"
-          src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> and click the <strong>Add
-        Character</strong> button to choose characters.</p>
-
-    <h3 id="set-scenario">Set Scenario</h3>
-
-    <p>Open the <strong>Main Menu <img class="icon"
-          src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> and click the <strong>Set
-        Scenario</strong> button. Select the edition to get a list of all available scenarios for the selected
-      edition.
-      Click on the scenario number to set up the scenario.</p>
-
-    <p>To play a custom scenario, select the <strong>Custom</strong> option and optionally enter a name for the scenario.
-      Afterwards in the <strong>Main Menu <img class="icon"
-          src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> click on the <strong>Add
-        Monster</strong> button to add a monster.</p>
-
-    <h3 id="scenario-level">Scenario Level</h3>
-
-    <p>At the bottom in the middle, the current scenario level with it's corresponding values for <strong>gold conversion
-        <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/loot.svg"></strong>,
-      <strong>trap damage <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/trap.svg"></strong> ,
-      <strong>experience <img class="icon"
-          src="https://gloomhaven-secretariat.de/assets/images/experience.svg"></strong>
-      and <strong>hazardous
-        terrain <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/terrain.svg"></strong>
-      are
-      shown. The scenario
-      level is automatically set based on the level of the added characters.
-    </p>
-
-    <p>To adjust the difficulty, click or touch the values, then use <strong>Scenario level adjustment</strong>.</p>
-
-    <p>To change the level manually, first disable <strong>Automatic level
-        calculation</strong>, then select the corresponding level. The recommended level based on the
-      characters'
-      level is highlighted with a lighter
-      circle if it does not match the current level. (To change character levels, see <a href="#updating-character">Updating
-        Character</a> and <a href="#managing-character">Managing Character</a>.)</p>
-
-    <p>With <strong>Level bonuses adjustment</strong> set adjustment of the level used for bonuses calculation and
-      <strong>&ge; 5 player rules</strong> (Only visible by &ge; 5 characters) apply Isaac's 5 player rules 
-      [<a href="https://boardgamegeek.com/thread/1702348/article/24683436#24683436">1</a>, <a href="https://boardgamegeek.com/thread/1702348/article/24685523#24685523">2</a>] 
-      (Level+2, Bonuses-2).
-    </p>
-
-    <p>For solo level calculation select the <strong>Solo</strong> option.</p>
-
-    <h3 id="spawn-monster">Spawn Monster</h3>
-
-    <p>To spawn a monster, click on the <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/plus.svg">
-      on
-      the monster stat cards. For a normal
-      monster, click on the left <img class="icon filter-gray"
-        src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon. For an elite monster, click on the right <img
-        class="icon filter-yellow" src="https://gloomhaven-secretariat.de/assets/images/plus.svg">
-      icon. For bosses, click on the left <img class="icon filter-red"
-        src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon.</p>
-
-    <h4 id="monster-level">Manually Change Monster Level</h4>
-
-    <p>To change the level of a monster manually, click on the current Level number on the monster's stat sheet to
-      open a level menu.</p>
-
-    <h3 id="choose-initiative">Choose Initiative</h3>
-
-    <p>Before starting the round, each character must have its initiative set. The initiative can be set by clicking
-      on
-      the <strong>character portrait</strong>, the
-      <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/initiative.svg"> icon
-      next to it or by entering it directly in the <strong>input
-        field</strong> under the <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/initiative.svg">
-      icon. You can also drag the
-      character portrait left or right to adjust the initiative.
-    </p>
-
-    <h3 id="start-round">Start Round</h3>
-
-    <p>After choosing initiative the round can be started by clicking the <strong>Draw</strong> button in the bottom
-      left
-      corner. The monster ability cards will be drawn and all figures will be sorted by their initiative. Now it's the
-      first figure's turn. The active figure is marked with a <span class="active-border">highlight</span> around
-      its portrait.</p>
-
-    <h3 id="entity-menus">Entity Menus</h3>
-
-    <p>On most turns values like hit points and conditions must be updated. Every entity has a
-      <strong>menu</strong>
-      for changing its values.
-    </p>
-
-    <h4 id="updating-monster-entity">Updating Monster Entity</h4>
-
-    <p>Every monster entity is represented by its <strong>standee</strong> below the monster's ability card. Click
-      on the <strong>standee</strong> to open the menu for the monster entity.</p>
-
-    <p>Change the hit points by clicking the <img class="icon"
-        src="https://gloomhaven-secretariat.de/assets/images/minus.svg"> icon or <img class="icon"
-        src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon next to the <strong>big</strong>
-      <img class="icon filter-off" src="https://gloomhaven-secretariat.de/assets/images/status/health.svg">
-      icon at the top left of the menu.
-    </p>
-
-    <p>Apply or remove conditions by clicking on the corresponding <strong>condition icon</strong>.</p>
-
-    <p><strong>Curses</strong> and <strong>Blesses</strong> are automatically shuffled into or removed from the shared 
-      <strong>Monster Attack Modifier Deck</strong> when you click the <img class="icon"
-        src="https://gloomhaven-secretariat.de/assets/images/minus.svg"> icon or
-      <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon next
-      to the <img class="icon filter-off" src="https://gloomhaven-secretariat.de/assets/images/status/curse.svg"> or
-      <img class="icon filter-off" src="https://gloomhaven-secretariat.de/assets/images/status/bless.svg"> icons.
-    </p>
-
-    <p>An entity is automatically dead when it hit points are below 1. To kill a monster entity directly, click on the
-      <img class="icon filter-off" src="https://gloomhaven-secretariat.de/assets/images/status/dead.svg"> icon.
-    </p>
-
-    <p>The maximum hit points can be changed by clicking the <img class="icon"
-        src="https://gloomhaven-secretariat.de/assets/images/minus.svg"> icon or
-      <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon next
-      to the <strong>small</strong> <img class="icon filter-off"
-        src="https://gloomhaven-secretariat.de/assets/images/status/health.svg"> icon on the bottom of the
-      menu. There is also a summon <img class="icon filter-off"
-        src="https://gloomhaven-secretariat.de/assets/images/summons/blue.png"> icon to mark an entity as
-      summoned.
-    </p>
-
-    <h5 id="monster-entity-active">Entity Active State</h5>
-
-    <p>On each monster's turn, all entities of that type are marked as active, visible by a <span
-        class="active-entity-border">highlight</span>. Double click on the entity to mark the end of the entity's turn.
-    </p>
-
-    <h4 id="updating-character">Updating Character</h4>
-
-    <p>To open the menu for a character click on the middle of the character area.</p>
-
-    <p>Change the hit points by clicking the <img class="icon"
-        src="https://gloomhaven-secretariat.de/assets/images/minus.svg"> icon or <img class="icon"
-        src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon next to the <strong>big</strong>
-      <img class="icon filter-off" src="https://gloomhaven-secretariat.de/assets/images/status/health.svg">
-      icon at the top left of the menu.
-    </p>
-
-    <p>Apply or remove conditions by clicking on the corresponding <strong>condition icon</strong>.</p>
-
-    <p><strong>Experience</strong> and <strong>Loot</strong> gained during the scenario can be recorded by clicking the
-      <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/minus.svg"> icon or
-      <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon next
-      to the <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/experience.svg"> and
-      <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/loot.svg"> icons.
-    </p>
-
-    <p>A character is automatically exhausted when its hit points are below 1. To manually mark a character as
-      exhausted,
-      click on the <img class="icon" src="https://gloomhaven-secretariat.de/assets/images/status/exhausted.svg">
-      icon.</p>
-
-    <p>Additionally the level can changed by clicking the <img class="icon"
-        src="https://gloomhaven-secretariat.de/assets/images/level.svg"> icon. Change the
-      level by selecting the corresponding number. The new maximum hit points will be calculated automatically. The
-      maximum
-      hit points can also be changed manually by clicking the <img class="icon"
-        src="https://gloomhaven-secretariat.de/assets/images/minus.svg"> icon or <img class="icon"
-        src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon next to the <img class="icon filter-off"
-        src="https://gloomhaven-secretariat.de/assets/images/status/health.svg"> icon in the
-      level menu.
-    </p>
-
-    <h4 id="adding-character-summons">Adding character summons</h4>
-
-    <p>To add summons click on the <strong>big</strong> <img class="icon filter-gray"
-        src="https://gloomhaven-secretariat.de/assets/images/plus.svg"> icon on the
-      right side of the character. The summon indicator can be set by selecting a color and a number. Available
-      summons
-      are listed be below and are added by clicking on the summon indicator icon on the left of the name. 
-      Custom summons can be added by entering a name in the text input field and clicking the summon indicator next to
-      it.
-    </p>
-
-    <h3 id="end-begin-turn">End/Begin Figure's Turn</h3>
-
-    <p>To end a figure's turn click on the figure portrait. The next figure will be activated automatically. Alternatively
-      an
-      inactive figure's turn can be started by clicking on its portrait.</p>
-
-    <h3 id="draw-attack-modifier">Draw Attack Modifier</h3>
-
-    <p>The monster's attack modifier deck is in the bottom right on the screen. Click on the undrawn card to draw the
-      next
-      card. The last two drawn cards are next to each other. To view or edit the deck, click on one of the drawn
-      cards or on the <img class="icon filter-gray" src="https://gloomhaven-secretariat.de/assets/images/settings.svg">
-      icon.
-    </p>
-
-    <p>The character's attack modifier deck can be opened by clicking on the small attack modifier <img
-        class="icon filter-off" src="https://gloomhaven-secretariat.de/assets/images/attackmodifier/icon.png"> icon in
-      the middle of the character area. The deck opens and works the same as the monster's deck. In addition, all drawn rolling
-      modifiers will be shown next to each other.<br>To close the deck just click somewhere on the character.<br>To
-      edit
-      character perks, see the <a href="#character-sheet">Character Sheet</a>.</p>
-
-
-    <h3 id="draw-loot">Draw Loot</h3>
-
-    <p>Frosthaven introduced a new <strong>Loot Deck</strong> mechanic. The loot deck is automatically configured for Frosthaven scenarios
-      and can be expanded by clicking on the <img class="icon"
-        src="https://gloomhaven-secretariat.de/assets/images/fh/loot-token.png"> icon on the bottom left.
-      Click on the undrawn card to draw the next card. The last two drawn cards are next to each other. To view or
-      edit
-      the deck, click on one of the drawn cards or on the <img class="icon filter-gray"
-        src="https://gloomhaven-secretariat.de/assets/images/settings.svg"> icon. In the edit window the <strong>Loot
-        Table</strong> and the
-      <strong>Card
-        Enhancements</strong> can be configured.
-    </p>
-
-    <h3 id="end-round">End round</h3>
-
-    <p>When all figures have taken their turns click the <strong>Next Round</strong> button on the bottom left to start
-      preparing for the next round.</p>
-
-    <h3 id="finish-scenario">Finish Scenario</h3>
-
-    <p>To finish a scenario, click on the scenario title on the bottom bar and select <strong
-        class="color-green">Success</strong> or <strong class="color-red">Failure</strong> to end the scenario with
-      success or failure.</p>
-
-    <p>When a scenario is finished either with success or failure the corresponding bonuses, in XP and
-      gold,
-      will be shown and also
-      automatically added to the character's progress. To view the character's progress open the <a
-        href="#character-sheet">Character Sheet</a>.</p>
-
-    <h3 id="add-section">Add Section</h3>
-
-    <p>To open a section, select the corresponding section on the bottom under the scenario title. Alternatively,
-      open the <strong>Main Menu <img class="icon"
-          src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> and click the <strong>Add
-        Section</strong> button. Select the section same just as you do for <a href="#set-scenario">Set Scenario</a>.</p>
-
-
-    <h3 id="character-sheet">Character Sheet</h3>
-
-    <p>To open a character's sheet, click on the character icon on the right of the character's area. A digital version of
-      the
-      character sheet will appear. Change the name, level, XP or gold for the character. Items can be added with automatic
-      deducation of the cost in gold, or directly, ignoring the cost. Battle Goal checkmarks can be set to gain corresponding
-      extra
-      perks. On the bottom are some extra fields for making additional notes, recording details of the Personal Quest, and setting the number of
-      previous retirements by that player to enable extra perks.</p>
-
-    <h4 id="character-perks">Set Perks</h4>
-
-    <p>Changing perks during a scenario is prohibited because changing perks will change and shuffle the character's
-      Attack Modifier Deck. The number of available perks is calculated due to level, battle goals and retirements. To
-      change perks anyway, double-click (long-press on mobile) on a disabled checkbox to toggle the perk. A warning will
-      be shown if the number of checked perks exceeds the permitted number.</p>
-
-    <h3 id="party-sheet">Party Sheet</h3>
-
-    <p>On the top bar, click on <strong>Party Sheet</strong> to open a digital representation of the party
-      sheet. If a Party Name is set the name will shown instead.</p>
-
-    <p>For Frosthaven the Party Sheet is replaced by the <strong>Frosthaven Campaign Sheet</strong>. The basic <a
-        href="#campaign-sheet">Campaign Sheet</a> for managing campaign progress such as scenarios, unlocked items and
-      listing retirements is still available by clicking on <strong>Campaign Sheet</strong> at the top.</p>
-
-    <h4 id="buildings">Buildings</h4>
-
-    <p>Buildings are also managed on the <strong>Frosthaven Campaign Sheet</strong>. Click on the name of the building
-      to change its status to <strong><img class="icon"
-          src="https://gloomhaven-secretariat.de/assets/images/fh/buildings/damaged.svg"> Damaged</strong> or
-      <strong><img class="icon" src="https://gloomhaven-secretariat.de/assets/images/fh/buildings/wrecked.svg">
-        Wrecked</strong>.
-    </p>
-
-    <p>To force the
-      <strong><img class="icon" src="https://gloomhaven-secretariat.de/assets/images/fh/buildings/upgrade.svg">
-        Upgrade</strong>, <strong><img class="icon"
-          src="https://gloomhaven-secretariat.de/assets/images/fh/buildings/damaged.svg"> Repair</strong> or
-      <strong><img class="icon" src="https://gloomhaven-secretariat.de/assets/images/fh/buildings/wrecked.svg">
-        Rebuild</strong> of a building without spending resources, double-click (long-press on mobile) the corresponding icon.
-    </p>
-
-    <h4 id="town-guard-deck">Town Guard Deck</h4>
-
-    <p>The <strong>Town Guard Deck</strong> is also available at the <strong>Frosthaven Campaign Sheet</strong>. In
-      contrast to the <strong>Attack Modifier Decks</strong>, the <strong>Town Guard Deck</strong> is disabled when
-      playing a scenario and can be drawn during Outpost Phase, otherwise it behaves the same way.</p>
-
-
-    <h3 id="campaign-sheet">Campaign Sheet</h3>
-
-    <p>On the <strong>Campaign Sheet</strong>, you can track <strong>Prosperity</strong>,
-      <strong>Global
-        Achievements</strong>, <strong>Unlocked Items</strong>, <strong>looted Treasures</strong> and
-      <strong>Donations</strong>. To add a treasure or item, enter the
-      treasure or item index number and click on the <img class="icon"
-        src="https://gloomhaven-secretariat.de/assets/images/plus.svg">
-      icon.
-    </p>
-
-    <h3 id="campaign-mode">Campaign Mode</h3>
-
-    <p>In Campaign Mode, scenarios are locked and need to be unlocked by finished the corresponding scenarios. When an
-      edition is selected at the beginning, the Campaign Mode is activated by default. To
-      toggle
-      campaign mode, open the <strong>Main Menu <img class="icon"
-          src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> and toggle the <strong>Campaign
-        Mode</strong> checkbox in the <strong>Set Edition</strong> menu. The Campaign Mode can also be toggled on the
-      <a href="#campaign-sheet">Campaign Sheet</a>.
-    </p>
-
-    <h2 id="additional">Additional Setup</h2>
-
-    <h3 id="settings">Settings</h3>
-
-    <p>To open the <strong>Settings Menu</strong> open the <strong>Main Menu <img class="icon"
-          src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> and click the
-      <strong>Settings</strong> button. Hover over (tap on mobile) the little <img class="icon filter-gray"
-        src="https://gloomhaven-secretariat.de/assets/images/hint.svg"> icon to get a more detailed description of a
-      setting.
-    </p>
-
-    <h3 id="server">Server Connection</h3>
-
-    <p>To synchronize the game state between multiple clients a separate server component is required. A
-      public instance is
-      available at <code>gloomhaven-secretariat.de</code> port <code>8443</code> with the <code>secure</code> option.
-      To
-      run
-      your own server, please refer to the <a target="_blank" href="https://github.com/Lurkars/ghs-server#how-to-run">How to
-        run</a> section in the GHS Server README.</p>
-
-    <p>To connect to a server, open the <strong>Main Menu <img class="icon"
-          src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> and
-      click on the <strong>Connect to Server</strong> button. Choose from a list of public servers or manually
-      setup a server. In the server menu the following fields must be set:
-    </p>
-
-    <ul>
-      <li><strong>Host</strong> the Host (Url or IP) of the server [<code>gloomhaven-secretariat.de</code>]</li>
-      <li><strong>Port</strong> [<code>8443</code>]</li>
-      <li><strong>Secure</strong> for secure websocket connection [<code>true</code>]</li>
-      <li><strong>Game Code</strong> The Game Code is your unique identifier for the game. You can also generate a
-        random
-        UUID for it.</li>
-    </ul>
-
-    <h3 id="custom">Custom Data</h3>
-
-    <p>To add custom data or change existing data, first make your data available via network (for example, via GitHub Pages
-      on
-      the internet). Then open the <strong>Main Menu <img class="icon"
-          src="https://gloomhaven-secretariat.de/assets/images/menu.svg"></strong> and click the <strong>Data
-        Management</strong> button. Under <strong>Edition Data Url</strong> add the URL to the data and click the <img
-        class="icon filter-gray" src="https://gloomhaven-secretariat.de/assets/images/plus.svg">
-      button.</p>
-
-    <p>An example repository can be found at <a target="_blank"
-        href="https://github.com/Lurkars/ghs-custom-demo">github.com/Lurkars/ghs-custom-demo</a> which is published at
-      <a target="_blank" href="https://lurkars.github.io/ghs-custom-demo/">lurkars.github.io/ghs-custom-demo</a>. So
-      as
-      an
-      example, add <code>https://lurkars.github.io/ghs-custom-demo/custom-demo.json</code> for a <i>complete</i>
-      custom
-      edition.
-    </p>
+
+<body id="top">
+  <div class="page">
+    <!-- ══ Sticky Header ══════════════════════════════════════════ -->
+    <header class="header">
+      <a class="header-title" href="#top">Gloomhaven Secretariat Help</a>
+
+      <div class="header-links">
+        <a href="https://gloomhaven-secretariat.de" target="_blank" rel="noopener">App</a>
+        <a href="https://github.com/Lurkars/gloomhavensecretariat" target="_blank" rel="noopener">GitHub</a>
+        <button class="dark-toggle" id="dark-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          🌙
+        </button>
+      </div>
+
+      <div class="search-wrapper">
+        <input class="search-input" id="search-input" type="search" placeholder="Search..."
+          autocomplete="off" aria-label="Search" aria-expanded="false" aria-haspopup="listbox"
+          role="combobox" />
+        <div class="search-results" id="search-results" role="listbox" aria-label="Search results"></div>
+      </div>
+    </header>
+
+    <!-- ══ Body layout ════════════════════════════════════════════ -->
+    <div class="body-layout">
+      <!-- ── Sidebar ─────────────────────────────────────────────── -->
+      <nav class="sidebar" id="sidebar">
+        <nav class="nav">
+          <a href="#s1-intro">1. Introduction &amp; Overview</a>
+          <a href="#s2-getting-started">2. Getting Started</a>
+          <a href="#s3-before-scenario">3. Before a Scenario</a>
+          <a href="#s4-playing">4. Playing a Scenario</a>
+          <a href="#s5-amd">5. Attack Modifier Decks</a>
+          <a href="#s6-loot">6. Loot Deck</a>
+          <a href="#s7-finishing">7. Finishing a Scenario</a>
+          <a href="#s8-campaign">8. Campaign Management</a>
+          <a href="#s9-party">9. Party Sheet &amp; Events</a>
+          <a href="#s10-fh-campaign">10. Frosthaven Campaign Sheet</a>
+          <a href="#s11-characters">11. Characters - Deep Dive</a>
+          <a href="#s12-special-actions">12. Character Special Actions</a>
+          <a href="#s13-items">13. Items &amp; Shop</a>
+          <a href="#s14-monsters">14. Monsters - Deep Dive</a>
+          <a href="#s15-server">15. Server Connection</a>
+          <a href="#s16-data">16. Data Management</a>
+          <a href="#s17-settings">17. Settings Reference</a>
+          <a href="#s18-keyboard-shortcuts">18. Keyboard Shortcuts</a>
+          <a href="#s19-editions">19. Edition-Specific Notes</a>
+          <a href="#s-faq">F.A.Q.</a>
+        </nav>
+      </nav>
+      <!-- /.sidebar -->
+
+      <!-- ── Main content ────────────────────────────────────────── -->
+      <main class="main">
+        <section class="section" id="s1-intro">
+          <h2>1. Introduction &amp; Overview</h2>
+          <p>
+            <strong>Gloomhaven Secretariat (GHS)</strong> is a free,
+            open-source <strong>companion app</strong> for the Gloomhaven
+            family of board games. It acts as a digital replacement for most
+            of the physical bookkeeping components, HP dials, condition
+            tokens, modifier decks, element discs, initiative trackers,
+            character sheets, campaign sheets, saving time and keeping your
+            table cleaner and your attention on the game.
+          </p>
+          <p>
+            It runs entirely in your browser with no installation needed, and
+            works on any modern device: desktop, tablet, or phone. It also
+            supports installation <strong>with offline support</strong>: as a
+            PWA on any platform, or as a dedicated standalone app on Windows,
+            Mac, Linux, and Android.
+          </p>
+
+          <h3>What does GHS do?</h3>
+          <p>
+            <strong>During a scenario</strong>, GHS handles all the table
+            bookkeeping so you can focus on playing. At its core it tracks
+            initiative for every figure and keeps them sorted; manages HP and
+            conditions for characters, monsters, summons, and objectives
+            (including automatic condition effects and expiry); draws and
+            manages monster ability cards with automatically calculated values,
+            and attack modifier decks for both monsters and characters; and
+            tracks elements, XP, gold, the loot deck, item states, and battle
+            goals. GHS automates a large number of fiddly rules: monsters are
+            set up automatically per room and section, scenario-specific rules
+            are displayed and often applied without any manual input, and
+            things like long rests, advantage/disadvantage draws, and condition
+            interactions are handled for you.
+          </p>
+          <p>
+            <strong>Between scenarios</strong>, GHS doubles as a full campaign
+            manager. It tracks character progression (level, gold, resources,
+            items, perks, and masteries), maintains your party and campaign
+            sheets, registers scenario unlocks, and provides a scenario flow
+            chart and a global map. Item management covers unlocks, purchasing,
+            and crafting. For Frosthaven players, the full Outpost is
+            supported: calendar, resources, buildings, Town Guard deck, and
+            Outpost Attacks.
+          </p>
+          <h3>Highlights for New Players</h3>
+          <p>
+            Once you know the rules and what needs tracking, you will
+            immediately recognise how much of the tedious bookkeeping GHS takes
+            off the table. HP dials, condition tokens, modifier decks, element
+            discs, initiative trackers, character sheets, campaign sheets: all
+            of that lives in the app. A full undo/redo history means mistakes
+            are never permanent.
+          </p>
+          <p>
+            Progress is saved locally in your browser with no account required.
+            You can export save files at any time, or connect to the free public
+            server for real-time sync across multiple devices, so every player
+            can follow along on their own phone or tablet.
+          </p>
+          <p>
+            Almost every feature can be toggled on or off in Settings, so you
+            can start with what you need and layer in more as you go. GHS is
+            free, open-source, actively maintained, and available in multiple
+            languages.
+          </p>
+
+          <div class="callout tip">
+            <strong>Getting started in 3 steps</strong>
+            <ol class="steps">
+              <li>Open <a href="https://gloomhaven-secretariat.de" target="_blank"
+                  rel="noopener">gloomhaven-secretariat.de</a> in your browser.</li>
+              <li>Select your edition, add your characters, and set your scenario.</li>
+              <li>Hit <strong>Start Round</strong>. GHS handles the rest.</li>
+            </ol>
+          </div>
+
+          <h3>Supported Editions</h3>
+          <p>
+            Select your edition on first launch or change it any time via the
+            main menu:
+          </p>
+          <ul>
+            <li>
+              <span class="edition-badge badge-gh">GH</span>
+              <strong>Gloomhaven</strong>
+            </li>
+            <li>
+              <span class="edition-badge badge-fh">FH</span>
+              <strong>Frosthaven</strong>
+            </li>
+            <li>
+              <span class="edition-badge badge-gh2e">GH2e</span>
+              <strong>Gloomhaven 2nd Edition</strong>
+            </li>
+            <li>
+              <span class="edition-badge badge-jotl">JotL</span>
+              <strong>Jaws of the Lion</strong>
+            </li>
+            <li>
+              <span class="edition-badge badge-fc">FC</span>
+              <strong>Forgotten Circles</strong>
+            </li>
+            <li>
+              <span class="edition-badge badge-bb">BB</span>
+              <strong>Buttons &amp; Bugs</strong>
+            </li>
+            <li>
+              <span class="edition-badge badge-mp">MP</span>
+              <strong>Mercenary Packs</strong>
+            </li>
+            <li>
+              <span class="edition-badge badge-cs">CS</span>
+              <strong>Crimson Scales</strong> (community)
+            </li>
+            <li>
+              <span class="edition-badge badge-toa">ToA</span>
+              <strong>Trail of Ashes</strong> (community)
+            </li>
+            <li>...more community stuff under Data Management menu and Custom content (via Data URL)</li>
+          </ul>
+
+          <h3>Your Data</h3>
+          <p>
+            GHS saves your game state automatically in your browser, no
+            account or installation required. Data is private to your device
+            and browser profile.
+          </p>
+          <div class="callout warn">
+            <strong>Private / Incognito Warning</strong>
+            Browser data is wiped when a private/incognito window closes.
+            Always use a regular browser window to keep your progress.
+          </div>
+          <p>
+            To back up or share your game across devices, you have three
+            options:
+          </p>
+          <ol>
+            <li>
+              <strong>Export Game to File</strong>: save a snapshot any time
+              from the Data Management menu.
+            </li>
+            <li>
+              <strong>Automatic Backups</strong>: configure GHS to download a
+              backup file (or POST to a URL) at a configurable interval.
+            </li>
+            <li>
+              <strong>Server Connection</strong>: connect to a GHS Server to
+              sync in real time across multiple clients.
+            </li>
+          </ol>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s2-getting-started">
+          <h2>2. Getting Started</h2>
+
+          <h3>First Launch &amp; Choosing an Edition</h3>
+          <p>
+            On first open, GHS prompts you to select an edition. You can
+            change the active edition later via the main menu. Switching
+            edition loads the correct scenario list, monster data, and
+            campaign sheet for that game.
+          </p>
+
+          <h3>Campaign Mode vs. Free Play</h3>
+          <p>
+            <strong>Campaign Mode</strong> tracks scenario unlocks,
+            prosperity, character retirements, and all campaign progress
+            exactly as the board game rules require.
+            <strong>Free Play</strong> lets you jump straight into any
+            scenario without campaign rules, useful for one-shots or casual
+            sessions.
+          </p>
+          <div class="callout tip">
+            <strong>Tip</strong>
+            You can toggle Campaign Mode off and on at any time from the
+            Scenario or Campaign menu without losing any data.
+          </div>
+
+          <h3>Navigating the UI</h3>
+          <ul>
+            <li>
+              <strong>Main Menu (☰)</strong>: top-left button in the header;
+              opens the menu for scenarios, campaign, settings, data
+              management, and more.
+            </li>
+            <li>
+              <strong>Header (top bar)</strong>: contains the main menu button
+              (☰) on the left, various status indicators (server connection,
+              party, game clock, etc.) in the centre, and the
+              <strong>elements panel</strong> on the right.
+            </li>
+            <li>
+              <strong>Footer (bottom bar)</strong>: contains:
+              <ul>
+                <li>
+                  <strong>Bottom-left:</strong> round counter and the
+                  <strong>Draw / Next Round</strong> button.
+                </li>
+                <li>
+                  <strong>Bottom-centre:</strong> current scenario name &amp;
+                  number; tap to open the scenario dialog. The scenario level
+                  is shown beside the name, and the
+                  <strong>level panel</strong> (trap, loot, XP, hazardous
+                  terrain values) sits to its right.
+                </li>
+                <li>
+                  <strong>Bottom-right:</strong> attack modifier decks
+                  (monster, ally, character) and loot deck.
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <h3>Undo &amp; Redo</h3>
+          <p>
+            Every action in GHS is undoable. Use the <strong>Undo</strong> and
+            <strong>Redo</strong> arrows in the main menu, or press
+            <span class="key">Ctrl+Z</span> /
+            <span class="key">Ctrl+Y</span>. Press
+            <span class="key">?</span> at any time to display the full
+            keyboard shortcut reference.
+          </p>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s3-before-scenario">
+          <h2>3. Before a Scenario</h2>
+
+          <h3>Adding &amp; Removing Characters</h3>
+          <p>
+            Open <strong>Add Character</strong> from the main menu to add
+            characters to the active party. Use the search filter to find a
+            character by name. Use <strong>Remove Character</strong> to take
+            characters out of the party.
+          </p>
+          <div class="callout warn">
+            <strong>Remove ≠ Retire!</strong>
+            Removing a character simply takes them out of the active party -
+            it does not trigger retirement effects (no prosperity bump, no
+            item pool return, no campaign sheet entry). To properly retire a
+            character, use the <strong>Retire</strong> button on the Character
+            Sheet instead (see <a href="#s11-characters">Section 11</a>).
+          </div>
+
+          <details class="spoiler">
+            <summary>Unlocking Envelope X / Envelope V - Spoiler</summary>
+            <div class="spoiler-body">
+              <p>
+                To unlock <strong>Envelope X</strong>
+                <span class="edition-badge badge-gh">GH</span> or
+                <strong>Envelope V</strong>
+                <span class="edition-badge badge-toa">ToA</span>, first enable
+                the envelope in <em>Data Management</em>, then type the
+                complete secret phrase into the Add Character search box (not
+                case-sensitive). The hidden character then appears in the
+                list.
+              </p>
+            </div>
+          </details>
+
+          <h3>Setting a Scenario</h3>
+          <p>
+            Open <strong>Set Scenario</strong> from the main menu. In Campaign
+            Mode, only unlocked scenarios are selectable. A
+            <strong>flow-chart button</strong> in the picker shows the
+            scenario unlock tree. For custom scenarios, choose
+            <em>Custom</em> and enter the details manually.
+          </p>
+
+          <h3>Adding Monsters Manually</h3>
+          <p>
+            Use <strong>Add Monster</strong> in the main menu to add any
+            monster type to the current encounter without selecting a full
+            scenario - useful for encounters built outside the scenario list.
+          </p>
+
+          <h3>Scenario Level &amp; Difficulty</h3>
+          <p>
+            GHS automatically calculates the recommended scenario level as
+            <strong>average party level ÷ 2, rounded up</strong> (e.g. a party
+            averaging level 4.25 > scenario level 3). The level panel sits in
+            the <strong>footer</strong> beside the scenario name and shows the
+            derived values for trap damage, gold conversion, XP bonus, and
+            hazardous terrain. Click it to open the level dialog where you can
+            adjust the <strong>level</strong> (0-7),
+            <strong>level adjustment</strong>,
+            <strong>bonus adjustment</strong>, and toggle
+            <strong>Solo</strong> mode.
+          </p>
+          <ul>
+            <li>
+              <strong>≥ 5 players</strong>: a toggle visible in the level
+              dialog only when 5 or more characters are present. Applies
+              Isaac's 5-player rules: the scenario level used for
+              <em>monster stats and traps</em> is raised by 2 (5 players) or
+              more, while the bonus values (gold conversion, XP) are kept at
+              the base level.
+            </li>
+            <li>
+              <strong>Solo mode</strong>: for one player controlling multiple
+              characters.
+              <span class="edition-badge badge-gh">GH</span> increases
+              scenario level by 1 (affecting monsters and traps) without
+              changing gold conversion or bonus XP.
+              <span class="edition-badge badge-fh">FH</span> adds 1 to the
+              average character level <em>before</em> dividing by 2, which
+              often results in a smaller increase. Enable in Settings.
+            </li>
+          </ul>
+
+          <h3>Adding Sections</h3>
+          <p>
+            Some scenarios have branching sections revealed mid-game. Open the
+            scenario dialog (tap the scenario name in the footer) and click an
+            available <strong>section</strong> to add it to the current
+            scenario. Alternatively, use
+            <strong>Main Menu &gt; Add Section</strong> to pick a section from
+            the same list.
+          </p>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s4-playing">
+          <h2>4. Playing a Scenario</h2>
+
+          <h3>Choosing Initiative</h3>
+          <p>
+            Click the <strong>initiative icon</strong> next to the character
+            portrait (or
+            <strong><i class="uppercase">double-click</i> the portrait</strong>) to open the initiative input, or type
+            directly into the
+            initiative number field beneath it. You can also
+            <strong>drag the character portrait</strong> left or right to
+            quickly set a fast or slow initiative value.
+          </p>
+
+          <h3>Starting the Round - Draw</h3>
+          <p>
+            Press the <strong>Draw</strong> button (bottom-left of the footer)
+            to start the round. GHS draws one ability card for every active
+            monster group and sorts all figures by initiative. The round
+            counter in the footer updates.
+          </p>
+
+          <h3>Turn Order &amp; Active Highlight</h3>
+          <p>
+            The active figure is highlighted with a coloured glow (the exact
+            colour depends on the selected theme). Click the figure or press
+            <span class="key">Tab</span> to advance to the next figure in
+            initiative order.
+          </p>
+
+          <h3>Updating Monster Entities</h3>
+          <p>
+            Each standee appears as a numbered token in its monster row. Tap
+            it to expand the entity panel:
+          </p>
+          <ul>
+            <li>
+              <strong>HP ±</strong>: tap <kbd>+</kbd> / <kbd>−</kbd> to apply
+              damage or healing.
+            </li>
+            <li>
+              <strong>Conditions</strong>: tap condition icons to apply or
+              remove (Poison, Wound, Immobilize, etc.).
+            </li>
+            <li>
+              <strong>Death</strong>: tap the skull icon to remove a defeated
+              standee.
+            </li>
+            <li>
+              <strong>Summon marker</strong>: in the entity menu, tap the
+              summon icon to mark a standee as summoned.
+            </li>
+            <li>
+              <strong>Max HP override</strong>: in the entity menu, use the
+              <kbd>+</kbd> / <kbd>-</kbd> buttons next to the max HP value to
+              adjust it. You can also press <span class="key">↑</span> /
+              <span class="key">↓</span> while the entity menu is open.
+            </li>
+          </ul>
+          <div class="callout note">
+            <strong>Active standees</strong>
+            Standees in an active monster group show a coloured glow. The
+            specific standee currently taking its turn shows a different glow
+            colour. The exact colours depend on the selected theme (e.g. GH
+            theme: red for group active, blue for taking turn; FH theme:
+            reversed). <i class="uppercase">double-click</i> a standee to
+            toggle its individual active state (requires the
+            <em>Active Standees</em> setting).
+          </div>
+
+          <h3>Updating Characters</h3>
+          <p>Tap a character's stat row to access quick controls:</p>
+          <ul>
+            <li>
+              <strong>HP ±</strong>, <strong>Conditions</strong>,
+              <strong>XP ±</strong>, <strong>Loot ±</strong>
+            </li>
+            <li>
+              <strong>Exhaustion</strong>: click the exhaustion icon to
+              exhaust or restore a character.
+            </li>
+            <li>
+              <strong>Level</strong>: click the level icon to change a
+              character's level mid-campaign.
+            </li>
+          </ul>
+
+          <h3>Adding Character Summons</h3>
+          <p>
+            In the character panel, tap <strong>Add Summon</strong>. Choose a
+            colour and number for the token, pick from the character's
+            predefined summon list, or enter a custom name.
+          </p>
+
+          <h3>Absent Characters</h3>
+          <p>
+            Toggle a character's absent status via the
+            <strong>absent icon</strong> on the Character Sheet or through the
+            entity menu. Absent characters' names appear struck through and
+            are skipped in turn order. Enable <em>Hide Absent Figures</em> in
+            Settings to remove them from the board view entirely. In the
+            scenario summary, absent characters receive no rewards by default
+            - toggle as needed.
+          </p>
+
+          <h3>Elements</h3>
+          <p>
+            The elements panel in the header shows all six elements. Click an
+            element icon to cycle it through its states. The exact cycle
+            depends on the game phase - during play you can set elements to
+            <em>New</em>, <em>Strong</em>, <em>Waning</em>, or <em>Inert</em>.
+            Elements wane automatically when the Next Round button is pressed.
+          </p>
+
+          <h3>Ending a Round</h3>
+          <p>
+            Click <strong>Next Round</strong> (bottom-left) after all figures
+            have acted. GHS wanes elements and resets the turn order. Then set
+            character initiatives and press <strong>Draw</strong> to draw new
+            ability cards and start the next round.
+          </p>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s5-amd">
+          <h2>5. Attack Modifier Decks</h2>
+
+          <h3>Monster Deck</h3>
+          <p>
+            The monster attack modifier deck sits in the
+            <strong>bottom-right corner</strong>. Tap the deck to draw a card;
+            the result is displayed until the next draw. Tap any
+            <strong>drawn card</strong> or the <strong>⚙</strong> icon to open
+            the deck dialog where you can view the full remaining deck,
+            shuffle, or edit its composition.
+          </p>
+
+          <h3>Character Decks</h3>
+          <p>
+            Each character has their own attack modifier deck accessed via the
+            small AMC icon in their character area. Rolling modifier cards are
+            chained automatically - GHS draws additional cards until a
+            non-rolling card appears. For <strong>advantage</strong>, two
+            cards are drawn and the better result applied; for
+            <strong>disadvantage</strong>, the worse result is applied.
+          </p>
+
+          <h3>Blesses &amp; Curses</h3>
+          <p>
+            In the deck dialog, tap <kbd>+</kbd> next to
+            <strong>Bless</strong> or <strong>Curse</strong> to shuffle one
+            in. When a Bless or Curse is drawn it is automatically removed;
+            tap <kbd>−</kbd> to remove one without drawing.
+          </p>
+
+          <h3>Editing a Deck / Selecting Perks</h3>
+          <p>
+            Open the deck view by tapping any drawn card or the
+            <strong>⚙</strong> icon on the character panel to edit deck
+            composition. From here you can select or deselect
+            <strong>perks</strong> earned through leveling, battle goals, or
+            retirements - the deck rebuilds automatically to reflect your
+            choices.
+          </p>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s6-loot">
+          <h2>6. Loot Deck <span class="edition-badge badge-fh">FH</span></h2>
+          <p>
+            Frosthaven scenarios include a
+            <strong>Loot Deck</strong> automatically configured for the chosen
+            scenario. The deck appears in the bottom area during play.
+          </p>
+
+          <h3>Drawing Cards</h3>
+          <p>
+            When a character loots a hex, tap the loot deck button to draw the
+            top card and assign the resources or gold to the character. Cards
+            are removed from the deck as drawn; the card count updates in real
+            time.
+          </p>
+
+          <h3>Viewing &amp; Editing the Deck</h3>
+          <p>
+            Tap the loot deck area to view all remaining cards. In the edit
+            view you can:
+          </p>
+          <ul>
+            <li>
+              Adjust the <strong>loot table</strong>: how many of each card
+              type are included in the deck.
+            </li>
+            <li>
+              Apply <strong>card enhancements</strong> unlocked through the
+              campaign (upgraded loot cards that grant extra resources).
+            </li>
+          </ul>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s7-finishing">
+          <h2>7. Finishing a Scenario</h2>
+
+          <h3>Ending the Scenario</h3>
+          <p>
+            Click the <strong>scenario name</strong> in the footer
+            (bottom-centre of the screen) to open the scenario dialog. Scroll
+            to the bottom of the dialog and choose <strong>Success</strong> or
+            <strong>Failure</strong> to finish the scenario.
+          </p>
+
+          <h3>Summary Screen</h3>
+          <p>
+            The summary shows each character's XP and gold for the scenario.
+            Values are applied automatically from what was tracked during
+            play; adjust any amount before confirming. Toggle a character's
+            <strong>Absent</strong> state here to include or exclude them from
+            rewards.
+          </p>
+          <div class="callout note">
+            <strong>Bonus XP on success:</strong> Completing a scenario grants
+            each non-absent character bonus experience equal to
+            <strong>4 + (2 × scenario level)</strong>. At level 0: +4 XP;
+            level 1: +6 XP; level 2: +8 XP; ... level 7: +18 XP. GHS adds this
+            automatically when you confirm a successful scenario.
+          </div>
+
+          <h3>Rewards</h3>
+          <p>
+            After confirming, GHS displays any
+            <strong>unlocked scenarios</strong> and <strong>items</strong>
+            earned as rewards. In Campaign Mode these are automatically added
+            to the campaign sheet.
+          </p>
+
+          <h3>Events</h3>
+          <p>
+            Events (road or city in GH/JotL, outpost in FH) are drawn
+            <strong>before a scenario begins</strong>, not after finishing.
+            GHS auto-prompts you to draw the applicable event when a scenario
+            is set up (if the Events Draw setting is enabled). You can also
+            trigger event draws manually from the Party Sheet.
+          </p>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s8-campaign">
+          <h2>8. Campaign Management</h2>
+
+          <h3>Campaign Sheet</h3>
+          <p>Open the Campaign Sheet from the main menu. It tracks:</p>
+          <ul>
+            <li>
+              <strong>Prosperity</strong>: auto-incremented when a character
+              retires (+1 prosperity in GH, +2 in FH/GH2e) or when a scenario
+              grants a prosperity reward.
+              <em>Note: JotL and FC have no retirement.</em>
+              <em>Note: donating gold to the Sanctuary of the Great Oak adds 2
+                Bless cards to your attack modifier deck for the next
+                scenario. In GH (with Envelope B unlocked), cumulative
+                donations above 10 also contribute prosperity ticks. In GH2e,
+                every 5 donations (up to 100) contribute an additional
+                prosperity tick.</em>
+            </li>
+            <li>
+              <strong>Global achievements</strong>: toggle on or off as the
+              campaign progresses.
+            </li>
+            <li>
+              <strong>Unlocked items</strong>: items added to the shop when
+              scenarios or events unlock them.
+            </li>
+            <li>
+              <strong>Looted treasures</strong>: check off chests as they are
+              found.
+            </li>
+            <li>
+              <strong>Donations</strong>
+              <span class="edition-badge badge-gh">GH</span> - track
+              cumulative gold donated.
+            </li>
+          </ul>
+
+          <h3>World Map &amp; Global Stickers</h3>
+          <p>
+            In the Campaign Sheet, tap <strong>World Map</strong> to view the
+            sticker map.
+            <span class="edition-badge badge-fh">FH</span> Stickers are placed
+            automatically when the corresponding event is concluded. If a
+            sticker is missing, it can be added manually via the
+            <strong>Add Conclusion</strong> input in the Campaign Sheet as a
+            workaround.
+          </p>
+          <details class="spoiler">
+            <summary>FH campaign sticker codes, Spoiler</summary>
+            <div class="spoiler-body">
+              <p>
+                The conclusion codes for the hidden map stickers are:
+                <em>blue-well</em>, <em>red-well</em>, <em>ice-spike</em>,
+                <em>portcullis</em>, <em>stage</em>, and others revealed as
+                the campaign progresses.
+              </p>
+            </div>
+          </details>
+
+          <h3>Scenario Flow Chart</h3>
+          <p>
+            Tap the <strong>flow-chart button</strong> in the scenario picker
+            or campaign menu to view an interactive diagram of all scenario
+            unlock requirements and connections.
+          </p>
+
+          <h3>Campaign Mode Filters</h3>
+          <p>
+            In Campaign Mode the scenario list can be filtered to show
+            <strong>only unfinished</strong>
+            scenarios, making it easy to see what is still available to play.
+          </p>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s9-party">
+          <h2>9. Party Sheet &amp; Events</h2>
+
+          <h3>Party Sheet</h3>
+          <p>
+            Open the Party Sheet by clicking the party name button in the
+            <strong>top bar</strong> (or via the main menu). Enter your
+            party's <strong>name</strong>, track
+            <strong>reputation</strong> and <strong>location</strong>, and
+            keep free-form <strong>notes</strong>. Reputation affects item
+            shop prices.
+          </p>
+
+          <h3>
+            Road Events
+            <span class="edition-badge badge-gh">GH</span><span class="edition-badge badge-fh">FH</span><span
+              class="edition-badge badge-jotl">JotL</span>
+          </h3>
+          <p>
+            Road Events are triggered
+            <strong>before a scenario begins</strong>, during setup. By
+            default GHS auto-prompts you to draw the event when the scenario
+            is set up (configurable via the <em>Events Draw</em> setting). You
+            can also draw events manually from the Party Sheet at any time.
+          </p>
+
+          <h3>
+            City Events
+            <span class="edition-badge badge-gh">GH</span><span class="edition-badge badge-jotl">JotL</span>
+          </h3>
+          <p>
+            Gloomhaven and Jaws of the Lions uses
+            <strong>City Events</strong> between scenarios. Draw and resolve
+            them from the Party Sheet or the Event Effects Menu.
+          </p>
+
+          <h3>
+            Outpost Events <span class="edition-badge badge-fh">FH</span>
+          </h3>
+          <p>
+            Frosthaven uses <strong>Outpost Events</strong> during the Outpost
+            Phase (between scenarios). Draw and resolve them from the Party
+            Sheet or the Event Effects Menu. Outpost events can affect
+            buildings, resources, and morale. In FH, road and outpost events
+            are prefixed with <strong>summer</strong> or
+            <strong>winter</strong> depending on the current calendar week.
+          </p>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s10-fh-campaign">
+          <h2>
+            10. Frosthaven Campaign Sheet
+            <span class="edition-badge badge-fh">FH</span>
+          </h2>
+
+          <h3>Resources</h3>
+          <p>
+            The resources panel shows all nine Frosthaven resource types. Tap
+            <kbd>+</kbd> / <kbd>-</kbd>
+            to update stock as resources are earned or spent:
+          </p>
+          <ul>
+            <li>
+              <strong>Materials (3):</strong> Lumber, Metal, Hide - used for
+              crafting and building costs.
+            </li>
+            <li>
+              <strong>Herbs (6):</strong> Arrowvine, Axenut, Corpsecap,
+              Flamefruit, Rockroot, Snowthistle - used for crafting and
+              certain buildings.
+            </li>
+          </ul>
+
+          <h3>Buildings</h3>
+          <p>
+            Each building is listed with its current level and damage state.
+            Click a building name to cycle its damage state (normal > damaged
+            > wrecked). <i class="uppercase">double-click</i> to cycle from
+            wrecked back to normal. To upgrade, repair, or rebuild:
+          </p>
+          <ul>
+            <li>
+              <strong>Normal upgrade</strong>: click the upgrade / repair /
+              rebuild icon and confirm; resources are deducted automatically.
+            </li>
+            <li>
+              <strong>Skip resource cost</strong>:
+              <i class="uppercase">double-click</i> (or long-press on mobile)
+              the icon to apply the change without spending resources.
+            </li>
+          </ul>
+
+          <h3>Calendar &amp; Weekly Sections</h3>
+          <p>
+            The campaign calendar shows all weeks of the Frosthaven campaign.
+            <i class="uppercase">double-click</i> any week to open a menu
+            where you can add or edit the sections (outpost events, building
+            upgrades, etc.) scheduled for that week.
+          </p>
+
+          <h3>Town Guard Deck</h3>
+          <p>
+            The Town Guard Deck is primarily used during the
+            <strong>Outpost Phase</strong>. Access it from the FH Campaign
+            Sheet to draw cards and resolve outpost attacks. It can also be
+            triggered during scenarios when event cards contain outpost attack
+            effects.
+          </p>
+
+          <h3>Morale</h3>
+          <p>
+            Track the current morale value by clicking the morale track on the
+            campaign sheet. Morale modifies your party's defense during
+            outpost attacks.
+          </p>
+
+          <h3>FH 2nd Edition</h3>
+          <p>
+            If you own the revised printing, enable the
+            <strong>FH Second Edition</strong> toggle in the
+            <strong>Campaign menu</strong> to use the corrected data, revised
+            scenarios, and updated monster stats.
+          </p>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s11-characters">
+          <h2>11. Characters - Deep Dive</h2>
+
+          <h3>Character Sheet Overview</h3>
+          <p>
+            Tap a character's <strong>portrait</strong> (the class icon) to
+            open the full Character Sheet. It shows the character's name,
+            class, current level, total XP, gold, and a free-text notes field.
+          </p>
+
+          <h3>Items</h3>
+          <p>
+            From the Character Sheet, tap <strong>Items</strong> to view
+            equipped and carried items. To add one:
+          </p>
+          <ul>
+            <li>
+              <strong>Buy with gold</strong>: select the item from the shop
+              list; the gold cost is deducted automatically.
+            </li>
+            <li>
+              <strong>Direct add</strong>: add the item without a gold cost
+              (e.g., a scenario reward).
+            </li>
+          </ul>
+          <p>
+            Tap an item during a scenario to toggle its
+            <strong>used / refreshed</strong> state.
+          </p>
+
+          <h3>Perks</h3>
+          <p>
+            The Perks tab shows the full perk list for the character's class.
+            GHS calculates how many perk marks are available automatically
+            from:
+          </p>
+          <ul>
+            <li>
+              <strong>Level ups</strong>: 1 perk per level gained above level
+              1 (so a level 5 character has 4 level-based perks).
+            </li>
+            <li>
+              <strong>Battle goal checkmarks</strong>: every 3 checkmarks
+              earns 1 extra perk mark (max 6 from this source).
+            </li>
+            <li>
+              <strong>Previous Retirements</strong>: each character this
+              player has previously retired grants 1 extra perk mark.
+            </li>
+            <li>
+              <span class="edition-badge badge-fh">FH</span>
+              <strong>Masteries</strong>: each class mastery achieved during a
+              scenario grants 1 extra perk mark.
+            </li>
+          </ul>
+          <p>
+            Perks cannot be changed while a scenario is in progress because
+            modifying them rebuilds and shuffles the character's attack
+            modifier deck. To override a locked perk anyway,
+            <i class="uppercase">double-click</i> (or long-press on mobile)
+            the checkbox. A warning is shown if the number of ticked perks
+            exceeds the available marks.
+          </p>
+
+          <h3>Battle Goals</h3>
+          <p>
+            Enable Battle Goals in Settings (on by default). From the
+            Character Sheet tap
+            <strong>Battle Goals</strong> to set up this session's cards. GHS
+            deals <strong>2 cards</strong> per character in GH/JotL (pick 1,
+            discard the other) or <strong>3 cards</strong> in FH/GH2e (pick 1,
+            discard 2). After a scenario, record the number of checkmarks
+            earned (0, 1, or 2). Every 3 checkmarks earns a perk mark (max 6
+            extra perk marks from battle goals).
+          </p>
+
+          <h3>Personal Quest</h3>
+          <p>
+            Use the <strong>Personal Quest</strong> section on the Character
+            Sheet to select a quest card and track progress. Each quest shows
+            its requirements with checkable counters that you fill in as
+            conditions are met. When all requirements are complete the
+            character is ready to retire.
+          </p>
+
+          <h3>Retiring a Character</h3>
+          <p>
+            When a character completes their personal quest, open the
+            Character Sheet and tap <strong>Retire</strong>. Retirement
+            automatically:
+          </p>
+          <ul>
+            <li>
+              Adds <strong>+1 Prosperity</strong> (GH) or
+              <strong>+2 Prosperity</strong> (FH/GH2e) to the campaign.
+            </li>
+            <li>
+              Adds the character's items to the shared
+              <strong>item pool</strong>.
+            </li>
+            <li>
+              Lists the character on the campaign sheet under
+              <em>Retired Characters</em>.
+            </li>
+          </ul>
+
+          <h3>Previous Retirements (Extra Perks)</h3>
+          <p>
+            The <strong>Previous Retirements</strong> field on the Character
+            Sheet records how many characters this player has retired before.
+            Each prior retirement grants 1 extra perk checkmark for the
+            current character, tracked automatically in the perk count.
+          </p>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s12-special-actions">
+          <h2>12. Character Special Actions</h2>
+          <p>
+            Some characters have unique ongoing mechanics beyond standard HP
+            and conditions. When such a character is active, a
+            <strong>tag strip</strong> (small icons or toggles) appears above
+            or near their character area.
+          </p>
+
+          <h3>Using Special Actions</h3>
+          <ul>
+            <li>
+              <strong>Activate / toggle</strong>: tap the action icon to turn
+              it on or off.
+            </li>
+            <li>
+              <strong>Persistent actions</strong> remain active across rounds
+              until manually toggled off.
+            </li>
+            <li>
+              <strong>Expire-on-round-end actions</strong> clear automatically
+              when Next Round is pressed.
+            </li>
+            <li>
+              <strong>Reset</strong>: some actions offer a manual reset button
+              when needed.
+            </li>
+          </ul>
+
+          <h3>Examples by Character</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Character</th>
+                <th>Special Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <span class="edition-badge badge-gh">GH</span> Lightning
+                  Bolt
+                </td>
+                <td>
+                  Blood Pact, Unbridled Power, Careless Charge (L7) toggles
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="edition-badge badge-gh">GH</span> Music Note
+                </td>
+                <td>Active Song, automatically gain 1 XP at start of turn</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="edition-badge badge-gh">GH</span> Eclipse
+                </td>
+                <td>Nightfall, generate Dark when not strong at end of turn (auto XP)</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="edition-badge badge-jotl">JotL</span>
+                  Demolitionist
+                </td>
+                <td>Mech Suit, +5 HP, Heal 10</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="edition-badge badge-fh">FH</span> Blinkblade
+                </td>
+                <td>Time Tokens (fast / slow state); Overdrive (Shield 1 each slow round); Breaknet Speed (2 damage at
+                  round start when not long resting, auto XP)</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="edition-badge badge-fh">FH</span> Banner Spear
+                </td>
+                <td>Banner of Strength (allies gain +1 Attack at turn start); Banner of Hope (allies with missing HP
+                  gain Heal 1 at turn start)</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="edition-badge badge-fh">FH</span> Boneshaper
+                </td>
+                <td>Solid Bones (L5), Unholy Prowess (L9)</td>
+              </tr>
+              <tr>
+                <td><span class="edition-badge badge-fh">FH</span> Prism</td>
+                <td>
+                  Mode switching (auto-apply mode, prism mode, repair mode,
+                  Geminate mode (L5), spider mode (L8)), long-rest ability
+                  (perk 8)
+                </td>
+              </tr>
+              <tr>
+                <td><span class="edition-badge badge-fh">FH</span> Shards</td>
+                <td>
+                  Resonance Token counter; Extra Resonance Tokens (perk 10)
+                </td>
+              </tr>
+              <tr>
+                <td><span class="edition-badge badge-fh">FH</span> Kelp</td>
+                <td>Trophy Token counter (perk 11)</td>
+              </tr>
+              <tr>
+                <td><span class="edition-badge badge-fh">FH</span> Fist</td>
+                <td>
+                  One with the Mountain, Gift of the Mountain (L7) toggles
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="edition-badge badge-fh">FH</span> Snowflake
+                </td>
+                <td>Muddle Monster toggle (perk 9)</td>
+              </tr>
+              <tr>
+                <td><span class="edition-badge badge-fh">FH</span> Astral</td>
+                <td>Imbue with Life, Veil of Protection (+3 HP/max for self and summons)</td>
+              </tr>
+              <tr>
+                <td><span class="edition-badge badge-fh">FH</span> Shackles</td>
+                <td>Delayed Malady, negative conditions do not apply/expire for 4 rounds (auto XP)</td>
+              </tr>
+              <tr>
+                <td><span class="edition-badge badge-cs">CS</span> Skull</td>
+                <td>Spirit summon bar</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="edition-badge badge-gh2e">GH2e</span> Lightning
+                  Bolt
+                </td>
+                <td>Blood Pact toggle; Long Rest Heal (perk 9)</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="edition-badge badge-gh2e">GH2e</span> Three
+                  Spears
+                </td>
+                <td>Supply Tokens (perk 11 + scenario)</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="edition-badge badge-gh2e">GH2e</span> Triangles
+                </td>
+                <td>Element Waning (perk 12)</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="edition-badge badge-ccug">CCUG</span> Swarmshift
+                </td>
+                <td>Hive Tokens, start each scenario with 1 Hive Token</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <details class="spoiler">
+            <summary>
+              Envelope X / GH2e Harrower special action - Spoiler
+            </summary>
+            <div class="spoiler-body">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Character</th>
+                    <th>Special Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <span class="edition-badge badge-gh">GH</span> Envelope
+                      X
+                    </td>
+                    <td>Call of the Grave</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <span class="edition-badge badge-gh2e">GH2e</span>
+                      Crossed Swords
+                    </td>
+                    <td>Call of the Grave</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </details>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s13-items">
+          <h2>13. Items &amp; Shop</h2>
+
+          <h3>Campaign Item List</h3>
+          <p>
+            Open <strong>Campaign > Items</strong> from the main menu to see
+            all items currently available in the shop. Only items unlocked
+            through scenario rewards, prosperity level, or the starting item
+            pool are listed.
+          </p>
+
+          <h3>Purchasing Items</h3>
+          <p>
+            Add items to a character from their Character Sheet > Items tab:
+          </p>
+          <ul>
+            <li>
+              <strong>With gold deduction</strong>: select the item from the
+              shop; the gold cost is subtracted from the character's gold
+              automatically.
+            </li>
+            <li>
+              <strong>Without gold deduction</strong>: use the direct-add
+              option to grant an item (e.g., a scenario reward) without
+              spending gold.
+            </li>
+          </ul>
+
+          <h3>
+            Craftable Items <span class="edition-badge badge-fh">FH</span>
+          </h3>
+          <p>
+            In Frosthaven, items can be crafted at the Craftsman building.
+            Craftable items show a resource cost; selecting one deducts the
+            required resources from the supply automatically.
+          </p>
+
+          <h3>
+            Brewing <span class="edition-badge badge-fh">FH</span>
+          </h3>
+          <p>
+            The <strong>Brew Grid</strong> tracks discovered potion recipes
+            from the Alchemist's Formulary (Building 26). Once unlocked, open
+            it from the Campaign Sheet. Each cell in the grid represents a
+            recipe; click a cell to mark it as discovered. When a character
+            crafts a brew, the herb cost is deducted from the supply automatically, the same as other craftable items.
+          </p>
+
+          <h3>Item Slots &amp; Equip Limits</h3>
+          <p>
+            GHS tracks six item slot types per the rules. Each character can
+            equip:
+          </p>
+          <ul>
+            <li><strong>Head</strong>: 1 item maximum.</li>
+            <li><strong>Body</strong>: 1 item maximum.</li>
+            <li><strong>Legs</strong>: 1 item maximum.</li>
+            <li>
+              <strong>One Hand</strong>: up to 2 one-handed items, OR 1
+              two-handed item (which uses both hand slots).
+            </li>
+            <li>
+              <strong>Two Hands</strong>: 1 item maximum (counts as both hand
+              slots).
+            </li>
+            <li>
+              <strong>Small Item</strong>: number equal to
+              half the character's level, rounded up (a level 1 character may
+              equip 1 small item, level 5 > 3, etc.).
+            </li>
+          </ul>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s14-monsters">
+          <h2>14. Monsters - Deep Dive</h2>
+
+          <h3>Stat Cards &amp; Spawning Standees</h3>
+          <p>
+            Each monster type shows a stat card with its current level stats
+            (move, attack, range, HP). To add standees to the encounter, use
+            the coloured <kbd>+</kbd> buttons on the stat card:
+          </p>
+          <ul>
+            <li><strong>White +</strong>: add a normal standee.</li>
+            <li><strong>Yellow +</strong>: add an elite standee.</li>
+            <li>
+              <strong>Red +</strong>: add a boss standee (boss monsters only).
+            </li>
+          </ul>
+
+          <h3>Changing Monster Level</h3>
+          <p>
+            Click the <strong>level number</strong> displayed on a monster's
+            stat card to manually override the level for that monster type.
+            This does not affect other monster types in the scenario.
+          </p>
+
+          <h3>Ability Cards &amp; Boss Cards</h3>
+          <p>
+            When you press Draw, GHS automatically draws one ability card per
+            active monster group and displays the initiative and abilities for
+            that round. Boss monsters use their own separate boss ability card
+            deck. Tap any ability card to read the full card text.
+          </p>
+
+          <h3>Random Monster Cards</h3>
+          <p>
+            Access the <strong>Random Monster</strong> tool from the Tools
+            section of the main menu. It draws from the random monster card
+            deck used in certain scenarios to determine which monster types
+            appear.
+          </p>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s15-server">
+          <h2>15. Server Connection (Multiplayer)</h2>
+          <p>
+            A GHS Server lets multiple devices share the same game state in
+            real time. Each client connects to the server and every change -
+            HP, conditions, turn order, loot - is synced instantly to all
+            connected players.
+          </p>
+
+          <h3>Public Server</h3>
+          <p>A public GHS Server instance is available at:</p>
+          <ul>
+            <li>
+              <strong>Host:</strong> <code>gloomhaven-secretariat.de</code>
+            </li>
+            <li><strong>Port:</strong> <code>8443</code></li>
+            <li><strong>Secure:</strong> on (WSS)</li>
+          </ul>
+
+          <h3>Connecting</h3>
+          <ol class="steps">
+            <li>Open <strong>Main Menu > Server Connection</strong>.</li>
+            <li>
+              Enter the host and port, and toggle <strong>Secure</strong> on
+              or off.
+            </li>
+            <li>
+              Enter or generate a <strong>Game Code</strong> (UUID). All
+              players must use the same code to join the same session.
+            </li>
+            <li>
+              Tap <strong>Connect</strong>. GHS syncs automatically once
+              connected.
+            </li>
+          </ol>
+
+          <h3>Permissions</h3>
+          <p>
+            The <strong>game code</strong> that first creates a session has no
+            restrictions - it acts as the <strong>admin code</strong> with
+            full permissions. From the admin client's server settings panel,
+            you can create additional game codes with restricted permissions
+            (e.g., read-only, or permission to edit only specific figures such
+            as characters, monsters, scenario, elements, loot deck, round,
+            level, attack modifiers, or party). Each player connects with the
+            game code matching their permission level.
+          </p>
+
+          <h3>Self-Hosting</h3>
+          <p>
+            To run your own server, see the
+            <a href="https://github.com/Lurkars/ghs-server" target="_blank" rel="noopener">GHS Server GitHub
+              repository</a>
+            for instructions.
+          </p>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s16-data">
+          <h2>16. Data Management</h2>
+
+          <h3>Export &amp; Import</h3>
+          <p>From <strong>Main Menu > Data Management</strong>:</p>
+          <ul>
+            <li>
+              <strong>Export Game to File</strong>: saves your complete game
+              state as a JSON file to your device. Do this regularly as a
+              manual backup.
+            </li>
+            <li>
+              <strong>Import Game from File</strong>: loads a previously
+              exported JSON file and restores the full game state.
+            </li>
+          </ul>
+
+          <h3>Automatic Backups</h3>
+          <p>
+            Enable <strong>Automatic Backups</strong> to have GHS save your
+            state periodically:
+          </p>
+          <ul>
+            <li>
+              <strong>File download</strong>: GHS downloads a backup file to
+              your device every N actions (configurable; disabled by default).
+            </li>
+            <li>
+              <strong>After finishing scenario</strong>: optionally trigger a
+              backup whenever a scenario is completed.
+            </li>
+            <li>
+              <strong>Upload to URL</strong>: supply an endpoint URL; GHS will
+              POST the backup JSON there at the same frequency.
+            </li>
+          </ul>
+
+          <h3>Edition Data URLs</h3>
+          <p>
+            To load custom content (homebrew monsters, scenarios, or
+            characters), add a
+            <strong>Data URL</strong> in the Data Management menu. GHS fetches
+            the JSON from that URL and merges it with the built-in content.
+            The JSON schema is documented in the
+            <a href="https://github.com/Lurkars/gloomhavensecretariat" target="_blank" rel="noopener">GHS GitHub
+              repository</a>.
+          </p>
+
+          <h3>Envelope X &amp; Envelope V</h3>
+          <details class="spoiler">
+            <summary>Unlock instructions - Spoiler</summary>
+            <div class="spoiler-body">
+              <ol class="steps">
+                <li>
+                  Open <strong>Data Management</strong> and enable the
+                  <strong>Envelope X</strong>
+                  <span class="edition-badge badge-gh">GH</span> or
+                  <strong>Envelope V</strong>
+                  <span class="edition-badge badge-toa">ToA</span> toggle.
+                </li>
+                <li>
+                  Open <strong>Add Character</strong> (main menu) and type the
+                  complete secret phrase (not case-sensitive) into the search
+                  box.
+                </li>
+                <li>
+                  The hidden character appears in the character list and can
+                  be added to the party.
+                </li>
+              </ol>
+            </div>
+          </details>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s17-settings">
+          <h2>17. Settings Reference</h2>
+
+          <h3>Opening Settings</h3>
+          <p>
+            Go to <strong>Main Menu > Settings</strong>. Settings are
+            organized into tabs across the top. A
+            <strong>search bar</strong> lets you filter settings by name
+            across all tabs. Hover the <strong>ⓘ</strong> icon next to any
+            toggle for a short description. Settings marked
+            <em>synced</em> are shared with all clients when connected to a
+            server.
+          </p>
+
+          <h3>Gameplay</h3>
+          <p>Controls which game systems are active.</p>
+          <ul>
+            <li>
+              <strong>Party Sheet</strong>: enable party-level tracking.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Character Sheet</strong>: show the full character sheet
+              button. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Scenario Rooms</strong>: enable room/section management.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Room Treasures</strong>: track room treasures (requires
+              Scenario Rooms). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Scenario Rules</strong>: display scenario-specific
+              rules. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Auto-apply Scenario Rules</strong>: automatically apply
+              scenario rules (requires Scenario Rules).
+              <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Battle Goals</strong>: enable the battle goals
+              sub-system. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Event Cards</strong>: enable road, city, and outpost
+              event drawing (requires Party Sheet). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>AM Deck with Advantage/Disadvantage</strong>: track
+              advantage/disadvantage on attack modifier draws.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Monster AM Deck</strong>: show the monster attack
+              modifier deck. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Character AM Deck</strong>: show per-character attack
+              modifier decks (requires Character Sheet).
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Ally AM Deck</strong>: separate deck for ally/summoned
+              figures. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Monsters</strong>: enable monster tracking.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Character Summons</strong>: enable summon management.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Character Items</strong>: enable per-character item
+              tracking. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Loot Deck</strong>: enable the loot deck.
+              <em>[default: on]</em>
+            </li>
+          </ul>
+
+          <h3>Automation</h3>
+          <p>Controls what GHS does automatically.</p>
+          <ul>
+            <li>
+              <strong>Apply Scenario Rewards</strong>: automatically apply
+              scenario completion rewards. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Draw Random Item Rewards</strong>: auto-draw a random
+              item reward. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Draw Random Scenario Rewards</strong>: auto-draw a
+              random scenario reward. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Apply Treasure Rewards</strong>: auto-apply treasure
+              loot (requires Scenario Rooms + Treasures).
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Apply Long Rest</strong>: automatically apply healing
+              and card recovery on long rest. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Automatic Character Unlock</strong>: auto-unlock
+              characters when conditions are met. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Apply Events Automatically</strong>: auto-apply events
+              (requires Event Cards + Party Sheet). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Auto Draw Events</strong>: auto-draw events each round
+              (requires Event Cards + Party Sheet). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Auto Start First Figure</strong>: skip the
+              initiative-set step and auto-activate the first figure.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Auto End Round</strong>: automatically end the round
+              when the last acting figure's turn ends.
+              <em>[default: off]</em>
+            </li>
+          </ul>
+          <h4>Conditions &amp; Elements (sub-section)</h4>
+          <ul>
+            <li>
+              <strong>Auto Expire Conditions</strong>: expire conditions at
+              the correct time automatically. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Auto Apply Conditions</strong>: apply conditions (wound,
+              regenerate, etc.) at turn start/end; individual conditions can
+              be excluded. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Auto Update Element State</strong>: wane/consume
+              elements automatically each round. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Confirm Applicable Conditions</strong>: prompt before
+              applying each condition; sub-lists let you exclude or fully
+              automate specific conditions. <em>[default: on]</em>
+            </li>
+          </ul>
+
+          <h3>Character</h3>
+          <p>Character-specific behaviour and display.</p>
+          <ul>
+            <li>
+              <strong>Initiative Required</strong>: require initiative entry
+              before starting a round. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Hide Absent Figures</strong>: remove absent characters
+              from the figure list. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Shield &amp; Retaliate</strong>: show shield/retaliate
+              on character boards. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Apply Retirement Bonuses</strong>: auto-apply retirement
+              rewards (requires Character Sheet). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Apply Item Actions</strong>: automatically apply item
+              effects (requires Character Items). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Active Summons</strong>: require manual activation of
+              summons. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Passive Summons</strong>: enable passive summon
+              tracking. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Scenario Statistics</strong>: track per-scenario stats.
+              <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Sort by Player #</strong>: sort characters by player
+              number instead of initiative. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Display Hand Size &amp; Level</strong>: show hand-size
+              and level info on character boards. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Display Traits</strong>: show character traits.
+              <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Character Forms</strong>: enable multi-form character
+              support. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Form Hint</strong>: show a hint for character form
+              abilities (requires Character Forms). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Battle Goals Reminder</strong>: reminder to check
+              battle goals (requires Battle Goals). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Always Show Battle Goals</strong>: persistent battle
+              goals display (requires Battle Goals). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Share Character Items House Rule</strong>: allow sharing
+              items between characters. <em>[default: off]</em>
+            </li>
+          </ul>
+
+          <h3>Monsters</h3>
+          <p>Monster display and standee options.</p>
+          <ul>
+            <li>
+              <strong>Ability Cards</strong>: show monster ability cards.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Show Calculated Stats</strong>: resolve stat expressions
+              on ability cards (requires Ability Cards).
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Add Stats Values to Abilities</strong>: merge stat
+              values into ability text (requires Ability Cards).
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Add Shield &amp; Retaliate to Abilities</strong>:
+              include shield/retaliate values in ability text (requires
+              Ability Cards). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Add Advantage to Abilities</strong>: include advantage
+              indicator in ability text (requires Ability Cards).
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Reveal Abilities Directly</strong>: skip the card-flip
+              animation (requires Ability Cards). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Show Initiative Range</strong>: show the range of
+              upcoming initiative on the ability deck before the round starts
+              (requires Ability Cards). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Interactive Abilities</strong>: allow clicking ability
+              text to apply effects (requires Ability Cards).
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Combine Interactive Abilities</strong>: merge
+              interactive ability actions (requires Interactive Abilities).
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Show Ability Numbers</strong>: display card numbers
+              (requires Ability Cards). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Show Expanded Ability Card</strong>: larger ability card
+              display (requires Ability Cards). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Show Full Ability Card</strong>: show the complete
+              ability card (requires Ability Cards). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Stat Cards</strong>: show monster stat cards.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Show Expanded Stat Cards</strong>: larger stat card
+              display (requires Stat Cards). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Hide Stats</strong>: hide stat values on stat cards
+              (requires Stat Cards). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Remove Unused Monsters</strong>: auto-remove monsters no
+              longer present. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Add for All Rooms/Sections</strong>: pre-add monsters
+              for every room. <em>[default: off]</em>
+            </li>
+          </ul>
+          <h4>Standees (sub-section)</h4>
+          <ul>
+            <li>
+              <strong>Standees</strong>: enable standee tracking.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Elite First</strong>: sort elite standees before normals
+              (requires Standees). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Shield &amp; Retaliate</strong>: show shield/retaliate
+              values on the standee list (requires Standees).
+              <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Shield &amp; Retaliate on Standee</strong>: show
+              shield/retaliate on individual standee tokens (requires
+              Standees). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Random Standees</strong>: assign standee numbers
+              randomly (requires Standees). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Automatic Standees</strong>: auto-spawn standees when a
+              room is loaded (requires Standees + Scenario Rooms).
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Automatic Standees Dialogs</strong>: show a dialog when
+              auto-spawning standees (requires Automatic Standees).
+              <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Active Standees</strong>: require manual activation of
+              each standee (requires Standees). <em>[default: on]</em>
+            </li>
+          </ul>
+
+          <h3>Game Rules</h3>
+          <p>
+            Edition-specific rules and house rules. Many settings auto-enable
+            when the matching edition is active.
+          </p>
+          <h4>
+            Frosthaven Rules <span class="edition-badge badge-fh">FH</span>
+          </h4>
+          <ul>
+            <li>
+              <strong>Apply Loot to Character</strong>: auto-assign loot to
+              characters. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Draw Random Item on Loot</strong>: auto-draw a random
+              item when looting (requires Apply Loot to Character).
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Always Show Loot Apply Dialog</strong>: always show the
+              loot dialog even when auto-applying (requires Apply Loot to
+              Character). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Auto Pass Calendar Time</strong>: automatically advance
+              the calendar. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Apply Building Bonuses</strong>: auto-apply building
+              rewards. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Unlock Envelope Buildings</strong>: unlock buildings
+              from sealed envelopes. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Challenges</strong>: enable FH challenge cards (shown
+              only when available). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Apply Challenges</strong>: automatically apply
+              challenges (requires Challenges). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Trials</strong>: enable FH trial cards (shown only when
+              available). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Apply Trials</strong>: automatically apply trials
+              (requires Trials). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Pets</strong>: enable FH pet support (shown only when
+              available). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Always use Loot Deck</strong>: force loot deck in
+              non-FH editions. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Always draw 3 Battle Goals</strong>: force 3-card battle
+              goal draw. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Always Attack Modifier Deck for Allies</strong>: force
+              ally AM deck in non-FH editions. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Always Hazardous Terrain</strong>: force hazardous
+              terrain rules. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Always FH Solo Rules</strong>: force FH solo scenario
+              rules. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Always FH Advantage/Disadvantage Rules</strong>: force
+              FH adv/disadv handling. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Add Gloomhaven Items</strong>: include GH items in FH
+              campaigns. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Advantage/Disadvantage Rolling House Rule</strong>:
+              alternate rolling modifier handling. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Share Resources House Rule</strong>: allow resource
+              sharing between characters. <em>[default: off]</em>
+            </li>
+          </ul>
+          <h4>
+            Gloomhaven 2nd Edition
+            <span class="edition-badge badge-gh2e">GH2e</span>
+          </h4>
+          <ul>
+            <li>
+              <strong>Monster Imbuements</strong>: enable the GH2e imbuement
+              mechanic (shown only when available). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Always Monster Imbuements</strong>: force imbuements in
+              other editions. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Keep Monster Imbuements</strong>: retain imbuement state
+              between rounds. <em>[default: off]</em>
+            </li>
+          </ul>
+          <h4>
+            Buttons &amp; Bugs <span class="edition-badge badge-bb">BB</span>
+          </h4>
+          <ul>
+            <li>
+              <strong>Character Limit</strong>: enforce the single-character
+              limit. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Roll Dice for AM</strong>: use dice rolls instead of an
+              attack modifier deck. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Limit Monster Standees</strong>: enforce BB standee
+              limits. <em>[default: on]</em>
+            </li>
+          </ul>
+
+          <h3>Display</h3>
+          <p>Visual appearance and layout controls.</p>
+          <h4>Theme</h4>
+          <ul>
+            <li>
+              <strong>Theme</strong>: choose GH (default), FH, Modern, or BB
+              visual style. <em>[default: GH]</em>
+            </li>
+            <li>
+              <strong>Automatic Theme</strong>: auto-select the theme matching
+              the active edition. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Frosthaven Style</strong>: apply FH styling tweaks
+              independent of theme. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Artwork</strong>: toggle card and character artwork.
+              <em>[default: on]</em>
+            </li>
+          </ul>
+          <h4>Animations</h4>
+          <ul>
+            <li>
+              <strong>Animations</strong>: master toggle for all animations.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Stat Animation</strong>: animate stat changes.
+              <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Animate Character AM Draw</strong>: flip animation for
+              character attack modifier draws. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Animation Speed</strong>: slider from 0.3× to 2×.
+              <em>(default: 1×)</em>
+            </li>
+          </ul>
+          <h4>Layout &amp; Zoom</h4>
+          <ul>
+            <li>
+              <strong>Fullscreen</strong>: expand GHS to fill the screen.
+              <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Zoom</strong>: zoom in/out/reset buttons.
+              <em>(default: 100%)</em>
+            </li>
+            <li>
+              <strong>Gesture Zooming (Pinch)</strong>: enable pinch-to-zoom
+              on touch devices. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Column Layout</strong>: arrange figures in columns.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Use All Available Columns</strong>: force all columns
+              to be filled (requires Column Layout). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Autoscroll</strong>: scroll to the active figure.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Wake Lock</strong>: prevent screen sleep (if browser
+              supports it). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Portrait-Mode Optimization</strong>: optimize layout for
+              portrait orientation. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Bar Size</strong>: slider to scale HP/XP bars.
+              <em>(default: 1×)</em>
+            </li>
+            <li>
+              <strong>Ability Font Size</strong>: slider to scale ability card
+              text. <em>(default: 1×)</em>
+            </li>
+          </ul>
+
+          <h3>Interface</h3>
+          <p>Fine-tune how character boards, menus, and prompts behave.</p>
+          <ul>
+            <li>
+              <strong>Character AM Deck above Monster Deck</strong>:
+              reposition the character deck. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Permanent Character AM Deck</strong>: always show the
+              character deck (not just when active). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Auto Active AM Deck</strong>: auto-switch to the active
+              character's deck. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Permanent Character Items</strong>: always show items.
+              <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Auto Active Items</strong>: auto-switch to the active
+              character's items (requires Permanent Character Items).
+              <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Auto Fullscreen AM Deck</strong>: go fullscreen when
+              drawing (requires Portrait Mode). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Damage instead of HP</strong>: show damage dealt rather
+              than remaining HP. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Toggle Damage/HP on Board</strong>: allow toggling
+              between damage and HP view on the character board (requires
+              Damage instead of HP). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>All Figures &amp; Standees Menu</strong>: show a
+              consolidated entity menu. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Compact Character Sheets</strong>: smaller character
+              sheet layout. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Character Full View</strong>: expanded character board
+              display. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Compact Character Boards</strong>: smaller character
+              boards (disabled in Modern theme). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Hide Character HP</strong>: hide the HP row on character
+              boards. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Hide Character Loot</strong>: hide the loot row on
+              character boards. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Hide Character XP</strong>: hide the XP row on character
+              boards. <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Display Player Number</strong>: show player numbers on
+              boards. <em>[default: off]</em>
+            </li>
+          </ul>
+          <h4>Hints</h4>
+          <ul>
+            <li>
+              <strong>Round/Turn Confirmation</strong>: prompt before ending
+              rounds or turns. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Initiative Set Dialog</strong>: show a dialog to
+              confirm starting the next round once all initiatives are set
+              (requires Initiative Required). <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Draw Events Reminder</strong>: remind to draw events.
+              <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Show Errata Hints</strong>: display errata markers.
+              <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Main Menu Hints</strong>: show hints in the main menu.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Backup Hint</strong>: show the backup reminder.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Tooltips</strong>: show contextual tooltips on hover.
+              <em>[default: on]</em>
+            </li>
+          </ul>
+          <h4>Game Clock</h4>
+          <ul>
+            <li>
+              <strong>Game Clock</strong>: display a play-time timer.
+              <em>[default: off]</em>
+            </li>
+            <li>
+              <strong>Automatic Game Clock</strong>: start/stop the clock
+              automatically. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Merge Game Clocks</strong>: merge server and local game
+              clocks into one total. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Auto Game Clock on Focus</strong>: resume the clock
+              when the app regains focus. <em>[default: off]</em>
+            </li>
+          </ul>
+
+          <h3>Language</h3>
+          <ul>
+            <li>
+              <strong>Language</strong>: choose from: English, German,
+              Spanish, French, Italian, Korean, Polish, Portuguese, Russian,
+              Thai, Chinese (Simplified), Chinese (Traditional).
+              <em>[default: English]</em>
+            </li>
+          </ul>
+
+          <h3>Preferences</h3>
+          <p>Input and control behaviour.</p>
+          <ul>
+            <li>
+              <strong>Max Undos</strong>: set the maximum number of undo steps
+              (0–50 without IndexedDB, up to unlimited with it).
+              <em>[default: 100]</em>
+            </li>
+            <li>
+              <strong>Long Press for Double-Click</strong>: use long-press
+              instead of double-tap on touch devices.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Drag &amp; Drop Figures</strong>: reorder figures by
+              dragging. <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Drag Values</strong>: adjust values by dragging.
+              <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Drag HP</strong>: drag to adjust hit points (requires
+              Drag Values). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Drag Initiative</strong>: drag to adjust initiative
+              (requires Drag Values). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Drag Loot</strong>: drag to adjust loot (requires Drag
+              Values). <em>[default: on]</em>
+            </li>
+            <li>
+              <strong>Drag XP</strong>: drag to adjust experience (requires
+              Drag Values). <em>[default: on]</em>
+            </li>
+          </ul>
+          <h4>Presets</h4>
+          <ul>
+            <li>
+              <strong>Apply Default Helper Settings</strong>: reset to
+              recommended helper defaults.
+            </li>
+            <li>
+              <strong>Apply X-haven Assistant Settings</strong>: match X-haven
+              Assistant behaviour.
+            </li>
+            <li>
+              <strong>Debug Settings</strong>: open advanced debug tools.
+            </li>
+          </ul>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s18-keyboard-shortcuts">
+          <h2>18. Keyboard Shortcuts</h2>
+          <p>
+            Keyboard shortcuts are enabled by default (toggle in Settings).
+            Press
+            <span class="key">?</span> at any time to display the reference
+            in-app. When shortcuts are active, these keys work globally:
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="key">Ctrl+Z</span></td>
+                <td>Undo</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="key">Ctrl+Y</span> /
+                  <span class="key">Ctrl+Shift+Z</span>
+                </td>
+                <td>Redo</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="key">Esc</span> /
+                  <span class="key">Backspace</span>
+                </td>
+                <td>Open main menu (Backspace preferred in fullscreen)</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="key">↑</span> /
+                  <span class="key">+</span>
+                </td>
+                <td>Zoom in</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="key">↓</span> /
+                  <span class="key">−</span>
+                </td>
+                <td>Zoom out</td>
+              </tr>
+              <tr>
+                <td><span class="key">Ctrl+R</span></td>
+                <td>Reset zoom</td>
+              </tr>
+              <tr>
+                <td><span class="key">F</span></td>
+                <td>Toggle fullscreen</td>
+              </tr>
+              <tr>
+                <td><span class="key">Tab</span></td>
+                <td>Advance active figure / toggle initiative input</td>
+              </tr>
+              <tr>
+                <td><span class="key">N</span></td>
+                <td>Next round / Draw</td>
+              </tr>
+              <tr>
+                <td><span class="key">M</span></td>
+                <td>Draw attack modifier card</td>
+              </tr>
+              <tr>
+                <td><span class="key">A</span></td>
+                <td>Draw with Advantage</td>
+              </tr>
+              <tr>
+                <td><span class="key">D</span></td>
+                <td>Draw with Disadvantage</td>
+              </tr>
+              <tr>
+                <td><span class="key">L</span></td>
+                <td>
+                  Draw from Loot Deck / Inc. money tokens (active character)
+                </td>
+              </tr>
+              <tr>
+                <td><span class="key">Shift+L</span></td>
+                <td>Dec. money tokens (active character)</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="key">1</span>-<span class="key">6</span>
+                </td>
+                <td>
+                  Toggle element state (1=Fire, 2=Ice, 3=Air, 4=Earth,
+                  5=Light, 6=Dark)
+                </td>
+              </tr>
+              <tr>
+                <td><span class="key">H</span></td>
+                <td>Toggle "Hide absent figures"</td>
+              </tr>
+              <tr>
+                <td><span class="key">Shift+H</span></td>
+                <td>Toggle "Character hand size" display</td>
+              </tr>
+              <tr>
+                <td><span class="key">S</span></td>
+                <td>
+                  Select figure by number (<span class="key">0</span>-<span class="key">9</span>)
+                </td>
+              </tr>
+              <tr>
+                <td><span class="key">W</span></td>
+                <td>Select figure in fixed order by number</td>
+              </tr>
+              <tr>
+                <td><span class="key">Enter</span></td>
+                <td>Open entity menu for active figure/standee</td>
+              </tr>
+              <tr>
+                <td><span class="key">X</span></td>
+                <td>Open difficulty / level menu</td>
+              </tr>
+              <tr>
+                <td><span class="key">Alt+X</span></td>
+                <td>Inc. XP for active character</td>
+              </tr>
+              <tr>
+                <td><span class="key">Shift+X</span></td>
+                <td>Dec. XP for active character</td>
+              </tr>
+              <tr>
+                <td><span class="key">E</span></td>
+                <td>Scenario effects menu</td>
+              </tr>
+              <tr>
+                <td><span class="key">Shift+F</span></td>
+                <td>Finish scenario menu</td>
+              </tr>
+              <tr>
+                <td><span class="key">P</span></td>
+                <td>Open party sheet</td>
+              </tr>
+              <tr>
+                <td><span class="key">G</span></td>
+                <td>Open global map</td>
+              </tr>
+              <tr>
+                <td><span class="key">C</span></td>
+                <td>Open scenario chart</td>
+              </tr>
+              <tr>
+                <td><span class="key">T</span></td>
+                <td>Toggle "Character traits" display</td>
+              </tr>
+              <tr>
+                <td><span class="key">I</span></td>
+                <td>Toggle "Damage HP" display mode</td>
+              </tr>
+              <tr>
+                <td><span class="key">#</span></td>
+                <td>Toggle "Player number" display</td>
+              </tr>
+              <tr>
+                <td><span class="key">?</span></td>
+                <td>Show keyboard shortcuts</td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            When a figure / standee menu is open, global shortcuts are
+            suspended and these apply instead:
+          </p>
+          <table>
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="key">→</span></td>
+                <td>Inc. current HP</td>
+              </tr>
+              <tr>
+                <td><span class="key">←</span></td>
+                <td>Dec. current HP</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="key">0</span>-<span class="key">9</span>
+                </td>
+                <td>Toggle condition / condition modifier</td>
+              </tr>
+              <tr>
+                <td><span class="key">X</span></td>
+                <td>Inc. XP</td>
+              </tr>
+              <tr>
+                <td><span class="key">Shift+X</span></td>
+                <td>Dec. XP</td>
+              </tr>
+              <tr>
+                <td><span class="key">L</span></td>
+                <td>Inc. Loot</td>
+              </tr>
+              <tr>
+                <td><span class="key">Shift+L</span></td>
+                <td>Dec. Loot</td>
+              </tr>
+              <tr>
+                <td><span class="key">B</span></td>
+                <td>Inc. Bless</td>
+              </tr>
+              <tr>
+                <td><span class="key">Shift+B</span></td>
+                <td>Dec. Bless</td>
+              </tr>
+              <tr>
+                <td><span class="key">C</span></td>
+                <td>Inc. Curse</td>
+              </tr>
+              <tr>
+                <td><span class="key">Shift+C</span></td>
+                <td>Dec. Curse</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="key">K</span> /
+                  <span class="key">D</span>
+                </td>
+                <td>Kill / Exhaust</td>
+              </tr>
+              <tr>
+                <td><span class="key">↑</span></td>
+                <td>Inc. max HP</td>
+              </tr>
+              <tr>
+                <td><span class="key">↓</span></td>
+                <td>Dec. max HP</td>
+              </tr>
+              <tr>
+                <td><span class="key">S</span></td>
+                <td>Open character sheet</td>
+              </tr>
+              <tr>
+                <td><span class="key">A</span></td>
+                <td>Toggle character absent</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+        <section class="section" id="s19-editions">
+          <h2>19. Edition-Specific Notes</h2>
+
+          <h3>Gloomhaven <span class="edition-badge badge-gh">GH</span></h3>
+          <ul>
+            <li>
+              Tracks <strong>global and personal achievements</strong> on the
+              campaign sheet.
+            </li>
+            <li>
+              Tracks the <strong>Sanctuary donation track</strong>. Donations
+              add 2 Bless cards per scenario; with Envelope B unlocked,
+              cumulative donations also contribute prosperity ticks.
+            </li>
+            <li>
+              <details class="spoiler">
+                <summary>Envelope X - Spoiler</summary>
+                <div class="spoiler-body">
+                  Unlock via Data Management, then type the secret phrase in
+                  Add Character search.
+                </div>
+              </details>
+            </li>
+          </ul>
+
+          <h3>Frosthaven <span class="edition-badge badge-fh">FH</span></h3>
+          <ul>
+            <li>
+              Full <strong>Outpost Phase</strong> support: buildings,
+              resources, morale, Town Guard Deck, and calendar.
+            </li>
+            <li>
+              Enable <strong>Second Edition</strong> in Settings if you own
+              the revised printing.
+            </li>
+            <li>
+              Loot Deck, craftable items, and outpost events are FH-exclusive
+              features.
+            </li>
+            <li>
+              <strong>Crossover content</strong>: GH/JotL characters can be
+              used in FH campaigns via the FH-crossover data pack.
+            </li>
+            <li>
+              Additional FH sub-features:
+              <strong>Challenges, Trials, Garden, Pets, Brew Grid</strong>
+              (each toggleable in Settings).
+            </li>
+          </ul>
+
+          <h3>
+            Jaws of the Lion
+            <span class="edition-badge badge-jotl">JotL</span>
+          </h3>
+          <ul>
+            <li>
+              Scenarios start with a linear tutorial sequence (1-6), then
+              branch into multiple paths.
+            </li>
+            <li>
+              No personal quests or retirement mechanic - the Retire button is
+              hidden for JotL.
+            </li>
+            <li>No scenario flow chart visualization.</li>
+            <li>JotL does include city events (22 events in the data).</li>
+          </ul>
+
+          <h3>
+            Forgotten Circles <span class="edition-badge badge-fc">FC</span>
+          </h3>
+          <ul>
+            <li>
+              Includes the <strong>Diviner</strong> class with unique ongoing
+              ability mechanics.
+            </li>
+            <li>Solo scenario overlays are supported.</li>
+          </ul>
+
+          <h3>
+            Gloomhaven 2nd Edition
+            <span class="edition-badge badge-gh2e">GH2e</span>
+          </h3>
+          <ul>
+            <li>
+              Supports the <strong>Imbuement</strong> mechanic (trackable via
+              Settings).
+            </li>
+            <li>
+              Donation track contributes prosperity ticks (every 5 donations
+              up to 100).
+            </li>
+            <li>
+              Additional character special actions: Lightning Bolt (Long Rest
+              Heal), Three Spears (Supply Tokens), Triangles (Element Waning).
+            </li>
+          </ul>
+
+          <h3>
+            Crimson Scales &amp; Trail of Ashes
+            <span class="edition-badge badge-cs">CS</span><span class="edition-badge badge-toa">ToA</span>
+          </h3>
+          <ul>
+            <li>Community editions with full GHS support.</li>
+            <li>
+              <span class="edition-badge badge-cs">CS</span> Donations add
+              random <strong>Oak Deck modifiers</strong> instead of Bless
+              cards.
+            </li>
+            <li>
+              <details class="spoiler">
+                <summary>Envelope V (Trail of Ashes) - Spoiler</summary>
+                <div class="spoiler-body">
+                  Unlock via Data Management, then type the secret phrase in
+                  Add Character search.
+                </div>
+              </details>
+            </li>
+          </ul>
+
+          <h3>
+            Buttons &amp; Bugs <span class="edition-badge badge-bb">BB</span>
+          </h3>
+          <ul>
+            <li>
+              Standalone mini-game with its own scenario list and simplified
+              rules.
+            </li>
+            <li>
+              Select <em>Buttons &amp; Bugs</em> from the edition picker on
+              first launch or via the main menu.
+            </li>
+          </ul>
+
+          <h3>Solo Play <span class="edition-badge badge-all">All</span></h3>
+          <p>
+            "Solo mode" refers to one player controlling multiple characters
+            alone - it is <em>not</em> tied to solo scenarios. Enable
+            <strong>Solo Level</strong> in Settings to apply the official
+            difficulty adjustment for solo play.
+          </p>
+          <ul>
+            <li>
+              Solo scenarios for individual characters are separate content
+              listed in the scenario picker under the relevant edition.
+            </li>
+          </ul>
+
+          <h3>Custom Content</h3>
+          <ul>
+            <li>
+              Add a <strong>Data URL</strong> in Data Management to load
+              homebrew monsters, scenarios, or characters.
+            </li>
+            <li>
+              The JSON data format / schema is documented in the
+              <a href="https://github.com/Lurkars/gloomhavensecretariat" target="_blank" rel="noopener">GHS GitHub
+                repository</a>.
+            </li>
+          </ul>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+
+
+
+        <!-- ══ FAQ ══════════════════════════════════════════════ -->
+        <section class="section" id="s-faq">
+          <h2>F.A.Q.</h2>
+
+          <details>
+            <summary>A player is missing, how do we keep the character in the party without them playing?</summary>
+            <p>
+              There is an <strong>Absent</strong> feature. After you start the
+              scenario, mark a character as absent by opening the
+              <a href="#s11-characters">Character Sheet</a> or entity menu and
+              clicking on the character name. The name will appear
+              <span style="text-decoration:line-through">struck-through</span>
+              to indicate it's absent. To hide absent characters in the list,
+              use the setting <strong>Hide absent figures</strong>. Absent
+              characters do not gain scenario rewards after finishing, toggle
+              their absent state in the scenario summary if XP should be
+              granted anyway.
+            </p>
+          </details>
+
+          <details>
+            <summary>How do we add a section to the calendar on the Frosthaven Campaign Sheet?</summary>
+            <p>
+              Double-click (long-press on mobile) on the corresponding week to
+              open a menu to add or edit sections for that week.
+              See <a href="#s10-fh-campaign">Section 10</a> for full details.
+            </p>
+          </details>
+
+          <details>
+            <summary>Where is my progress stored?</summary>
+            <p>
+              GHS uses the browser's local
+              <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API">IndexedDB</a>
+              to store the current game state, settings, and undo/redo
+              information. This data is local to every browser, no data is
+              stored on other devices.
+            </p>
+            <div class="callout warn">
+              <strong>Private / Incognito Warning</strong>
+              In private/incognito mode the browser will clear IndexedDB after
+              the window closes. Always use a regular browser window to keep
+              your progress.
+            </div>
+            <p>There are other options to store the state:</p>
+            <ol>
+              <li>Manually <strong>Export Game to File</strong> under <em>Data Management</em>.</li>
+              <li>Turn on <strong>Automatic Backups</strong> under <em>Data Management</em>, configured to download a
+                file or upload to a URL.</li>
+              <li>Use <a href="#s15-server"><strong>Server Connection</strong></a> to store the game on a server and
+                access it from any client with real-time sync.</li>
+            </ol>
+          </details>
+
+          <details class="spoiler">
+            <summary>How can I add Envelope X (and V)? [Spoiler]</summary>
+            <div class="spoiler-body">
+              <p>
+                To add <strong>Envelope X</strong>
+                <span class="edition-badge badge-gh">GH</span> or
+                <strong>Envelope V</strong>
+                <span class="edition-badge badge-toa">ToA</span>, enable it
+                under <em>Data Management</em>, then type the complete secret
+                phrase into the <em>Add Character</em> search box (not
+                case-sensitive). See <a href="#s16-data">Section 16</a> for
+                step-by-step instructions.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>How do we add campaign stickers from events to the global map? <span
+                class="edition-badge badge-fh">FH</span></summary>
+            <p>
+              Stickers are placed automatically when the corresponding event
+              conclusion is registered. If a sticker is missing, you can add
+              it manually via <strong>Add Conclusion</strong> in the Campaign
+              Sheet using these codes:
+              <em>blue-well</em>, <em>red-well</em>, <em>ice-spike</em>,
+              <em>portcullis</em>, <em>stage</em>.
+              See <a href="#s8-campaign">Section 8</a> for more.
+            </p>
+          </details>
+
+          <a class="top-link" href="#top">↑ Top</a>
+        </section>
+      </main>
+      <!-- /.main -->
+    </div>
+    <!-- /.body-layout -->
   </div>
+  <!-- /.page -->
 
+  <!-- Mobile sidebar toggle -->
+  <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle navigation">
+    ☰
+  </button>
+
+  <!-- ══ Search + Sidebar JS ════════════════════════════════════ -->
   <script>
-    document.querySelectorAll('[id]').forEach((element) => {
-      let anchor = document.createElement('a');
-      anchor.innerHTML = '<svg viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg>';
-      let url = new URL(document.location.href);
-      url.hash = "";
-      anchor.href = url + '#' + element.id;
-      anchor.classList.add('anchor');
-      element.prepend(anchor);
-    })
+    (function () {
+      "use strict";
+
+      /* ── Mobile sidebar toggle ──────────────────────────────── */
+      const sidebarToggle = document.getElementById("sidebar-toggle");
+      const sidebar = document.getElementById("sidebar");
+      sidebarToggle.addEventListener("click", () => {
+        sidebar.classList.toggle("open");
+      });
+      document.addEventListener("click", (e) => {
+        if (
+          sidebar.classList.contains("open") &&
+          !sidebar.contains(e.target) &&
+          e.target !== sidebarToggle
+        ) {
+          sidebar.classList.remove("open");
+        }
+      });
+
+      /* ── Dark mode toggle ─────────────────────────────────── */
+      const darkToggle = document.getElementById("dark-toggle");
+      function applyDark(dark) {
+        document.body.classList.toggle("dark", dark);
+        document.body.classList.toggle("light", !dark);
+        darkToggle.textContent = dark ? "☀️" : "🌙";
+        darkToggle.setAttribute(
+          "aria-label",
+          dark ? "Switch to light mode" : "Switch to dark mode",
+        );
+      }
+      // Restore preference, fall back to system
+      const stored = localStorage.getItem("dark-mode");
+      if (stored !== null) {
+        applyDark(stored === "1");
+      } else {
+        applyDark(window.matchMedia("(prefers-color-scheme: dark)").matches);
+      }
+      darkToggle.addEventListener("click", () => {
+        const nowDark = !document.body.classList.contains("dark");
+        localStorage.setItem("dark-mode", nowDark ? "1" : "0");
+        applyDark(nowDark);
+      });
+
+      /* ── Build search index ─────────────────────────────────── */
+      const index = [];
+      document.querySelectorAll(".section").forEach((section) => {
+        const id = section.id;
+        const h2 = section.querySelector("h2");
+        const title = h2 ? h2.textContent.trim() : id;
+
+        // Collect sub-headings for breadcrumb snippets
+        section.querySelectorAll("h3, h4").forEach((sub) => {
+          const subText = sub.textContent.trim();
+          // Gather sibling text until next heading
+          let body = "";
+          let node = sub.nextSibling;
+          while (node && !/^H[234]$/.test(node.nodeName)) {
+            if (node.textContent) body += node.textContent + " ";
+            node = node.nextSibling;
+          }
+          index.push({
+            id,
+            title,
+            sub: subText,
+            text: (subText + " " + body).toLowerCase(),
+            raw: body.trim(),
+          });
+        });
+
+        // Section as a whole
+        const bodyText = section.textContent.replace(/\s+/g, " ").trim();
+        index.push({
+          id,
+          title,
+          sub: null,
+          text: bodyText.toLowerCase(),
+          raw: bodyText,
+        });
+      });
+
+      /* ── Search helpers ─────────────────────────────────────── */
+      const input = document.getElementById("search-input");
+      const results = document.getElementById("search-results");
+
+      function escapeRe(s) {
+        return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      }
+
+      function snippet(text, query, maxLen) {
+        maxLen = maxLen || 120;
+        const re = new RegExp(escapeRe(query), "gi");
+        const idx = text.search(re);
+        if (idx === -1) {
+          return text.slice(0, maxLen) + (text.length > maxLen ? "..." : "");
+        }
+        const start = Math.max(0, idx - 40);
+        const end = Math.min(text.length, idx + query.length + 80);
+        let snip =
+          (start > 0 ? "..." : "") +
+          text.slice(start, end) +
+          (end < text.length ? "..." : "");
+        return snip.replace(re, "<mark>$&</mark>");
+      }
+
+      function clearHighlights() {
+        document.querySelectorAll("mark.highlight").forEach((m) => {
+          const parent = m.parentNode;
+          parent.replaceChild(document.createTextNode(m.textContent), m);
+          parent.normalize();
+        });
+      }
+
+      function highlightInPage(query) {
+        clearHighlights();
+        if (!query) return;
+        const re = new RegExp(escapeRe(query), "gi");
+        document
+          .querySelectorAll(
+            ".section p, .section li, .section td, .section h3, .section h4",
+          )
+          .forEach((el) => {
+            el.childNodes.forEach((node) => {
+              if (node.nodeType !== Node.TEXT_NODE) return;
+              const text = node.textContent;
+              if (!re.test(text)) return;
+              re.lastIndex = 0;
+              const frag = document.createDocumentFragment();
+              let last = 0;
+              let m;
+              while ((m = re.exec(text)) !== null) {
+                frag.appendChild(
+                  document.createTextNode(text.slice(last, m.index)),
+                );
+                const mark = document.createElement("mark");
+                mark.className = "highlight";
+                mark.textContent = m[0];
+                frag.appendChild(mark);
+                last = m.index + m[0].length;
+              }
+              frag.appendChild(document.createTextNode(text.slice(last)));
+              node.parentNode.replaceChild(frag, node);
+            });
+          });
+      }
+
+      function navigateTo(id) {
+        const target = document.getElementById(id);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+        results.classList.remove("open");
+        input.setAttribute("aria-expanded", "false");
+        sidebar.classList.remove("open");
+      }
+
+      function doSearch(query) {
+        results.innerHTML = "";
+        if (!query || query.length < 2) {
+          results.classList.remove("open");
+          input.setAttribute("aria-expanded", "false");
+          return;
+        }
+
+        const q = query.toLowerCase();
+        const seen = new Set();
+        const matches = [];
+
+        index.forEach((entry) => {
+          if (seen.has(entry.id + "|" + (entry.sub || ""))) return;
+          if (entry.text.includes(q)) {
+            seen.add(entry.id + "|" + (entry.sub || ""));
+            matches.push(entry);
+          }
+        });
+
+        if (matches.length === 0) {
+          results.innerHTML =
+            '<div class="no-results">No results found.</div>';
+          results.classList.add("open");
+          input.setAttribute("aria-expanded", "true");
+          return;
+        }
+
+        matches.slice(0, 8).forEach((entry) => {
+          const a = document.createElement("a");
+          a.className = "search-result-item";
+          a.href = "#" + entry.id;
+          a.setAttribute("role", "option");
+
+          const titleEl = document.createElement("span");
+          titleEl.className = "result-title";
+          titleEl.textContent = entry.title;
+          a.appendChild(titleEl);
+
+          if (entry.sub) {
+            const breadcrumb = document.createElement("span");
+            breadcrumb.className = "result-breadcrumb";
+            breadcrumb.textContent = entry.sub;
+            a.appendChild(breadcrumb);
+          }
+
+          const snipEl = document.createElement("span");
+          snipEl.className = "result-snippet";
+          snipEl.innerHTML = snippet(entry.raw || entry.text, q);
+          a.appendChild(snipEl);
+
+          a.addEventListener("click", (e) => {
+            e.preventDefault();
+            navigateTo(entry.id);
+            highlightInPage(query);
+          });
+
+          results.appendChild(a);
+        });
+
+        results.classList.add("open");
+        input.setAttribute("aria-expanded", "true");
+      }
+
+      /* ── Event listeners ────────────────────────────────────── */
+      let debounceTimer;
+      input.addEventListener("input", () => {
+        clearTimeout(debounceTimer);
+        const q = input.value.trim();
+        if (!q) {
+          clearHighlights();
+          results.classList.remove("open");
+          input.setAttribute("aria-expanded", "false");
+          return;
+        }
+        debounceTimer = setTimeout(() => doSearch(q), 200);
+      });
+
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          results.classList.remove("open");
+          input.setAttribute("aria-expanded", "false");
+          input.blur();
+        }
+        if (e.key === "ArrowDown") {
+          const first = results.querySelector(".search-result-item");
+          if (first) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      });
+
+      results.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowDown") {
+          const next = document.activeElement.nextElementSibling;
+          if (next) {
+            e.preventDefault();
+            next.focus();
+          }
+        }
+        if (e.key === "ArrowUp") {
+          const prev = document.activeElement.previousElementSibling;
+          if (prev) {
+            e.preventDefault();
+            prev.focus();
+          } else {
+            e.preventDefault();
+            input.focus();
+          }
+        }
+        if (e.key === "Escape") {
+          results.classList.remove("open");
+          input.setAttribute("aria-expanded", "false");
+          input.focus();
+        }
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!input.contains(e.target) && !results.contains(e.target)) {
+          results.classList.remove("open");
+          input.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      /* ── Sidebar active link on scroll ─────────────────────── */
+      const sections = document.querySelectorAll(".section");
+      const navLinks = document.querySelectorAll(".nav a");
+
+      navLinks.forEach((a) => {
+        a.addEventListener("click", () => sidebar.classList.remove("open"));
+      });
+
+      function setActiveLink() {
+        let current = null;
+        sections.forEach((s) => {
+          const rect = s.getBoundingClientRect();
+          if (rect.top <= 80) current = s.id;
+        });
+        navLinks.forEach((a) => {
+          const href = a.getAttribute("href");
+          a.classList.toggle("active", href === "#" + current);
+        });
+      }
+
+      window.addEventListener("scroll", setActiveLink, { passive: true });
+      setActiveLink();
+    })();
   </script>
 </body>
 
